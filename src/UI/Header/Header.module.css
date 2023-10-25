@@ -1,0 +1,23 @@
+.nav {
+   padding: 15px 25px;
+   background-color: #444444;
+   width: 100%;
+}
+
+.icon {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   align-content: center;
+   width: fit-content;
+   transition: filter 0.2s;
+}
+
+.icon:hover {
+   filter: brightness(0.8);
+}
+
+.navText {
+   margin-left: 10px;
+   font-size: 33px;
+}
