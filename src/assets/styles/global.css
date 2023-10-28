@@ -12,6 +12,8 @@
    font-weight: bold;
    font-size: 18px;
    user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
    -webkit-tap-highlight-color: transparent;
 }
@@ -46,7 +48,6 @@ body {
    height: 100%;
    width: 100%;
    font-size: 100%;
-   line-height: 1;
    font-size: 14px;
    -ms-text-size-adjust: 100%;
    -moz-text-size-adjust: 100%;
@@ -114,13 +115,13 @@ input {
 }
 
 .main-container {
-   padding: 15px;
+   padding: 80px 18px 70px;
    max-width: 1500px;
    margin: auto;
 }
 
 @media (max-width: 480px) {
    .main-container {
-      padding: 10px;
+      padding: 75px 10px 70px;
    }
 }

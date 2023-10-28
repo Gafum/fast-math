@@ -33,6 +33,18 @@ export const testList = [
       },
    },
    {
+      name: "Вправи на ділення",
+      id: "division",
+      link: "https://youtu.be/z5rETox69t8?si=qW5Hj0l9Y6Onqw98",
+      createQuestions: () => {
+         let a = Randomizer.randomInteger(2, 9),
+            b = Randomizer.randomInteger(2, 9);
+
+         return createOptions(`${a * b} / ${a} =`, b);
+      }
+
+   },
+   {
       name: "Квадрати натуральних чисел",
       id: "square",
       link: "https://youtu.be/z5rETox69t8?si=qW5Hj0l9Y6Onqw98",
@@ -88,4 +100,94 @@ export const testList = [
       }
 
    },
+   {
+
+      name: "Лінійні рівняння",
+      id: "easy-equation",
+      link: "https://youtu.be/z5rETox69t8?si=qW5Hj0l9Y6Onqw98",
+      createQuestions: () => {
+         let a = Randomizer.randomInteger(2, 9),
+            b = Randomizer.randomInteger(2, 9);
+         return createOptions(Randomizer.randomInteger(0, 1) ?
+            `${a} * x = ${a * b},  x =` :
+            `${a * b} / x = ${a},  x =`, b);
+      }
+   },
+   {
+      name: "Прості рівняння",
+      id: "equation",
+      link: "https://youtu.be/z5rETox69t8?si=qW5Hj0l9Y6Onqw98",
+      createQuestions: () => {
+         let result = Randomizer.randomInteger(1, 50),
+            a = 2,
+            b = 1,
+            x = 0,
+            equation = "";
+
+         if (Randomizer.randomInteger(0, 1)) {
+            a = result + Randomizer.randomInteger(1, 50);
+            b = Randomizer.randomInteger(1, 50);
+            x = a - result + b;
+            equation = Randomizer.randomInteger(0, 1) ?
+               `${a} + ${b} - x = ${result}` :
+               `${a} - x + ${b} = ${result}`
+         } else {
+            a = result - Randomizer.randomInteger(1, 50);
+            b = Randomizer.randomInteger(1, 50);
+            x = result - (a - b);
+            equation = a < 0 ? `x - ${Math.abs(a)} - ${b} = ${result}` :
+               Randomizer.randomInteger(0, 1) ?
+                  `${a} - ${b} + x = ${result}` :
+                  `${a} + x - ${b} = ${result}`
+         }
+         return createOptions(equation + ", x =", x);
+      }
+
+   },
+   {
+      name: "Квадратні рівняння",
+      id: "quadratic-equation",
+      link: "https://youtu.be/z5rETox69t8?si=qW5Hj0l9Y6Onqw98",
+      createQuestions: () => {
+         let root1 = Randomizer.randomInteger(-10, 10);
+         let root2 = Randomizer.randomInteger(-10, 10);
+         while (root1 === root2 && root1 === 0 && root2 === 0) {
+            root1 = Randomizer.randomInteger(-10, 10);
+            root2 = Randomizer.randomInteger(-10, 10);
+         }
+
+
+         const sumOfRoots = root1 + root2;
+         const productOfRoots = root1 * root2;
+
+         return createOptions(`x^2 ${(sumOfRoots > 0 ? "- " : "+ ") + Math.abs(sumOfRoots)}x ${(productOfRoots > 0 ? "+ " : "- ") + Math.abs(productOfRoots)} = 0, x1 + x2 =`, root1 + root2);
+      },
+   },
+   {
+      name: "Середнє число",
+      id: "average-mean",
+      link: "https://youtu.be/z5rETox69t8?si=qW5Hj0l9Y6Onqw98",
+      createQuestions: () => {
+         let answer = Randomizer.randomInteger(2, 20), question = "";
+
+         if (Randomizer.randomInteger(0, 1)) { // What should user find
+            let remainder, divider = 1;
+
+            while (remainder !== 0) {
+               divider++;
+
+               remainder = answer % divider;
+            }
+
+            question = `Чому дорівнює середнє геометричне ${answer / divider} і ${answer * divider}?`;
+         } else {
+            let application = Randomizer.randomInteger(1, 15);
+            question = `Чому дорівнює середнє арифметичне ${answer - application} і ${answer + application}?`;
+         }
+
+
+         return createOptions(question, answer);
+      },
+   }
+
 ];

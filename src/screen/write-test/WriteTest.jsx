@@ -10,7 +10,8 @@ function WriteTest() {
    const [modalIsOpen, openCloseModal] = useState(false);
 
    const handleInputChange = (event) => {
-      let inputValue = event.target.value.replace(/\D/g, "");
+      let inputValue = event.target.value.replace(/[^0-9-]+/g, "");
+
       setText(inputValue);
    };
 
@@ -40,7 +41,7 @@ function WriteTest() {
                type="text"
                inputMode="numeric"
                placeholder="Введіть текст"
-               value={text.replace(/\D/g, "")}
+               value={text.replace(/[^0-9-]+/g, "")}
                onChange={handleInputChange}
             />
          </form>

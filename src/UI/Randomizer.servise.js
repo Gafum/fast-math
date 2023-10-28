@@ -9,9 +9,7 @@ export default class Randomizer {
 }
 
 export function createOptions(question, correctAnswer, isSimple = false) {
-   let listOfAnswers = []
-
-   listOfAnswers[0] = correctAnswer;
+   let listOfAnswers = [correctAnswer];
 
    listOfAnswers[1] = String(
       correctAnswer - Randomizer.randomInteger(1, 11)
@@ -26,9 +24,9 @@ export function createOptions(question, correctAnswer, isSimple = false) {
       Number(correctAnswer) + Randomizer.randomInteger(1, 11)
    );
 
-   listOfAnswers[3] = -1
+   listOfAnswers[3] = correctAnswer
 
-   while (listOfAnswers.includes(listOfAnswers[3]) && Number(listOfAnswers[3]) < 0) {
+   do {
       listOfAnswers[3] = String(
          correctAnswer +
          Number(
@@ -36,7 +34,7 @@ export function createOptions(question, correctAnswer, isSimple = false) {
             Randomizer.randomInteger(5, 15)
          )
       );
-   }
+   } while (listOfAnswers.includes(listOfAnswers[3]) && Number(listOfAnswers[3]) < 0)
 
    if (isSimple) {
       listOfAnswers[1] = String(correctAnswer - 1);

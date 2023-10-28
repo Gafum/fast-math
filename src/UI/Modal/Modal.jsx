@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Modal.module.css";
 
 function Modal({ isOpen, closeModal, children }) {
@@ -11,9 +12,17 @@ function Modal({ isOpen, closeModal, children }) {
             onClick={(e) => e.stopPropagation()}
          >
             {children}
-            <button className={styles.modal__btn} onClick={closeModal}>
-               Закрити
-            </button>
+            <div className={styles.modal__btns}>
+               <Link className={styles.modal__btn} to="/">
+                  Закрити
+               </Link>
+               <button
+                  className={`${styles.modal__btn} ${styles.modal__btn_blue}`}
+                  onClick={closeModal}
+               >
+                  Повторити
+               </button>
+            </div>
          </div>
       </div>
    );
