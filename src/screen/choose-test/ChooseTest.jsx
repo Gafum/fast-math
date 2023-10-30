@@ -26,6 +26,12 @@ function ChooseTest() {
             myColor={"#2C6A91"}
             whatTopic={whatTopic}
          />
+         <ChooseItem
+            where={"exercizes"}
+            text={"Приклади із ЗНО "}
+            myColor={"#493066"}
+            whatTopic={whatTopic}
+         />
 
          <ChooseItem
             text={"Як це робити швидко?"}
