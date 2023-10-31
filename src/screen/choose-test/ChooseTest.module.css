@@ -18,7 +18,9 @@
    color: white;
 }
 
-.card:hover {
-   filter: brightness(1.1);
-   box-shadow: rgb(129, 129, 129) 0 0 5px;
+@media (hover: hover) {
+   .card:hover {
+      filter: brightness(1.1);
+      box-shadow: rgb(129, 129, 129) 0 0 5px;
+   }
 }

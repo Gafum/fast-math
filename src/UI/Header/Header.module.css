@@ -17,8 +17,10 @@
    transition: filter 0.2s;
 }
 
-.icon:hover {
-   filter: brightness(0.8);
+@media (hover: hover) {
+   .icon:hover {
+      filter: brightness(0.8);
+   }
 }
 
 .navText {

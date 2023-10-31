@@ -66,6 +66,8 @@
    background-color: #2c6a91;
 }
 
-.modal__btn.modal__btn_blue:hover {
-   box-shadow: 0px 0px 8px #2c6a91de;
+@media (hover: hover) {
+   .modal__btn.modal__btn_blue:hover {
+      box-shadow: 0px 0px 8px #2c6a91de;
+   }
 }

@@ -17,9 +17,11 @@
    align-content: center;
 }
 
-.topicBtn:hover {
-   background-color: #555;
-   box-shadow: #555 0 0px 5px;
+@media (hover: hover) {
+   .topicBtn:hover {
+      background-color: #555;
+      box-shadow: #555 0 0px 5px;
+   }
 }
 
 .topicBtn > span {
