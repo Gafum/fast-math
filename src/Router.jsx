@@ -8,8 +8,8 @@ import RealExercizes from "./screen/realExercizes/RealExercizes.jsx";
 
 function Router() {
    return (
-      <Routes>
-         <Route path="/fast-math/" element={<Home />} />
+      <Routes basename="/fast-math/">
+         <Route path="/fast-math" element={<Home />} />
          <Route path="/fast-math/choose" element={<ChooseTest />} />
          <Route path="/fast-math/basic-test" element={<BacisTest />} />
          <Route path="/fast-math/write-test" element={<WriteTest />} />

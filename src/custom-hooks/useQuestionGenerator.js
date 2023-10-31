@@ -11,12 +11,13 @@ function useQuestionGenerator() {
 
    useEffect(() => generateNewQuestion(), [])
 
-   const {
-      state: { whatTopic },
-   } = useLocation();
+   const location = useLocation();
+   const whatTopic = location.state ? location.state.whatTopic : null;
 
    const generateNewQuestion = () => {
-      setCurrentQuestion(testList.find(({ id }) => id === whatTopic).createQuestions());
+      if (whatTopic) {
+         setCurrentQuestion(testList.find(({ id }) => id === whatTopic).createQuestions());
+      }
    };
 
    return {

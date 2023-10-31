@@ -5,7 +5,9 @@ import styles from "./ChooseTest.module.css";
 function ChooseTest() {
    const {
       state: { whatTopic },
-   } = useLocation();
+   } = useLocation()
+      ? useLocation()
+      : { state: { whatTopic: "multiply-by-9" } };
    return (
       <div className={styles.cardList}>
          <ChooseItem
