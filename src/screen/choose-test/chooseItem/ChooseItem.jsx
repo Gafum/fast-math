@@ -15,7 +15,7 @@ function ChooseItem({ where, whatTopic, text, myColor }) {
       <>
          {where ? (
             <Link
-               to={`/${where}`}
+               to={`/fast-math/${where}`}
                state={{ whatTopic }}
                style={{ width: "100%" }}
             >

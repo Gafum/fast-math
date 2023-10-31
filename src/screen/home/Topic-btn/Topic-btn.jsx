@@ -3,7 +3,7 @@ import styles from "../Home.module.css";
 
 function TopicBtn({ name, id }) {
    return (
-      <Link to={`/choose`} state={{ whatTopic: id }}>
+      <Link to={`/fast-math/choose`} state={{ whatTopic: id }}>
          <div className={styles.topicBtn}>
             <span>{name}</span>
          </div>

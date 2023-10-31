@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 function Header() {
    return (
       <nav className={styles.nav}>
-         <Link to="/" className={styles.icon}>
+         <Link to="/fast-math" className={styles.icon}>
             <img
                src="/favicon.svg"
                alt="icon"
