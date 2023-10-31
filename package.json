@@ -1,6 +1,7 @@
 {
   "name": "math-training",
   "private": true,
+  "homepage": "https://gafum.github.io/fast-math/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
