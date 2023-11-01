@@ -54,4 +54,8 @@
       flex-direction: row;
       gap: 5px;
    }
+
+   .question {
+      padding: 10px;
+   }
 }

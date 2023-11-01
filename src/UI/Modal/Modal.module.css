@@ -11,6 +11,7 @@
    align-items: center;
    align-content: center;
    pointer-events: none;
+   padding: 10px;
 }
 
 .modal.active {
@@ -64,6 +65,19 @@
 
 .modal__btn.modal__btn_blue {
    background-color: #2c6a91;
+}
+
+@media (max-width: 480px) {
+   .modal {
+      background-color: black;
+      align-items: flex-start;
+   }
+
+   .modal__content {
+      border: none;
+      top: 0;
+      padding: 10px 0;
+   }
 }
 
 @media (hover: hover) {

@@ -13,7 +13,7 @@ function Modal({ isOpen, closeModal, children }) {
          >
             {children}
             <div className={styles.modal__btns}>
-               <Link className={styles.modal__btn} to="/fast-math">
+               <Link className={styles.modal__btn} to="/">
                   Закрити
                </Link>
                <button

@@ -4,14 +4,15 @@ import Router from "./Router.jsx";
 import "./assets/styles/global.css";
 import Header from "./UI/Header/Header.jsx";
 import { BrowserRouter } from "react-router-dom";
+import MainConteiner from "./UI/Main-conteiner/MainConteiner.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename="/fast-math">
          <Header />
-         <div className="main-container">
+         <MainConteiner>
             <Router />
-         </div>
+         </MainConteiner>
       </BrowserRouter>
    </React.StrictMode>
 );

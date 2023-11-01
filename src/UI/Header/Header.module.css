@@ -4,7 +4,8 @@
    width: 100%;
    top: 0;
    top: 0;
-   position: fixed;
+   z-index: 2;
+   position: relative;
    box-shadow: #111 0px 1px 10px;
 }
 

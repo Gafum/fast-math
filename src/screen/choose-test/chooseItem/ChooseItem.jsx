@@ -14,11 +14,7 @@ function ChooseItem({ where, whatTopic, text, myColor }) {
    return (
       <>
          {where ? (
-            <Link
-               to={`/fast-math/${where}`}
-               state={{ whatTopic }}
-               style={{ width: "100%" }}
-            >
+            <Link to={`/${where}/${whatTopic}`} style={{ width: "100%" }}>
                <UnderLink />
             </Link>
          ) : (

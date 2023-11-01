@@ -45,6 +45,8 @@ aside {
 
 html,
 body {
+   overflow: hidden;
+   max-height: 100vh;
    height: 100%;
    width: 100%;
    font-size: 100%;
@@ -112,16 +114,4 @@ input {
    font-size: 35px;
    width: 100%;
    max-width: 100%;
-}
-
-.main-container {
-   padding: 80px 18px 70px;
-   max-width: 1500px;
-   margin: auto;
-}
-
-@media (max-width: 480px) {
-   .main-container {
-      padding: 75px 10px 70px;
-   }
 }

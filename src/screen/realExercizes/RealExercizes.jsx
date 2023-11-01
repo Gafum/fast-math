@@ -1,14 +1,21 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { testList } from "../../data/testList";
 import styles from "./RealExercizes.module.css";
 
 function RealExercizes() {
    const [showAnswers, setShowAnswers] = useState([]);
 
-   const {
-      state: { whatTopic },
-   } = useLocation();
+   const { whatTopic } = useParams();
+   const navigate = useNavigate();
+
+   if (!testList.find(({ id }) => id === whatTopic)) {
+      return (
+         <h1 className={styles.question} onClick={() => navigate("/")}>
+            Тема не знайдена! Перевірте чи правильно введене посилання!
+         </h1>
+      );
+   }
 
    const toggleAnswer = (index) => {
       setShowAnswers((prevShowAnswers) => {

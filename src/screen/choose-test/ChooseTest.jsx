@@ -1,13 +1,23 @@
-import { useLocation } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ChooseItem from "./chooseItem/ChooseItem";
 import styles from "./ChooseTest.module.css";
+import { testList } from "../../data/testList";
 
 function ChooseTest() {
-   const {
-      state: { whatTopic },
-   } = useLocation()
-      ? useLocation()
-      : { state: { whatTopic: "multiply-by-9" } };
+   const { whatTopic } = useParams();
+   const navigate = useNavigate();
+
+   if (!testList.find(({ id }) => id === whatTopic)) {
+      return (
+         <h1
+            className={styles.card}
+            style={{ backgroundColor: "#912C2C" }}
+            onClick={() => navigate("/")}
+         >
+            Тема не знайдена! Перевірте чи правильно введене посилання!
+         </h1>
+      );
+   }
    return (
       <div className={styles.cardList}>
          <ChooseItem

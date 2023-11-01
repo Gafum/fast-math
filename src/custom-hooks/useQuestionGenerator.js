@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { testList } from "../data/testList";
 
 function useQuestionGenerator() {
@@ -11,12 +11,18 @@ function useQuestionGenerator() {
 
    useEffect(() => generateNewQuestion(), [])
 
-   const location = useLocation();
-   const whatTopic = location.state ? location.state.whatTopic : null;
+   const { whatTopic } = useParams();
 
    const generateNewQuestion = () => {
-      if (whatTopic) {
-         setCurrentQuestion(testList.find(({ id }) => id === whatTopic).createQuestions());
+      let whatTest = testList.find(({ id }) => id === whatTopic)
+      if (whatTest) {
+         setCurrentQuestion(whatTest.createQuestions());
+      } else {
+         setCurrentQuestion({
+            question: "Тема не знайдена!!!",
+            options: ["1", "2", "3", ":("],
+            correctAnswer: "",
+         });
       }
    };
 
