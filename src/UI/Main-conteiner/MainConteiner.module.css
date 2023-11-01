@@ -1,5 +1,5 @@
 .mainConteiner {
-   padding: 15px 18px 130px;
+   padding: 15px 18px;
    max-width: 1500px;
    margin: 0px auto 15px;
    height: 100%;
@@ -18,6 +18,6 @@
 
 @media (max-width: 480px) {
    .mainConteiner {
-      padding: 15px 10px 130px;
+      padding: 15px 10px;
    }
 }
