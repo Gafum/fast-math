@@ -6,7 +6,7 @@ function Header() {
       <nav className={styles.nav}>
          <Link to="/" className={styles.icon}>
             <img
-               src="/favicon.svg"
+               src="/fast-math/favicon.svg"
                alt="icon"
                style={{ width: "25px", height: "25px" }}
             ></img>
