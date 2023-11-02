@@ -3,7 +3,6 @@
    grid-template-columns: repeat(2, 1fr);
    gap: 15px;
    height: fit-content;
-   margin-bottom: 100px;
 }
 
 .topicBtn {
@@ -30,6 +29,11 @@
    font-size: 30px;
    color: white;
    text-align: center;
+}
+
+.invisibleBox {
+   height: 100px;
+   width: 100%;
 }
 
 @media (min-width: 1300px) {
