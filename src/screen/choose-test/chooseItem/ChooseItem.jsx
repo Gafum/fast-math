@@ -5,7 +5,7 @@ import { testList } from "../../../data/testList";
 function ChooseItem({ where, whatTopic, text, myColor }) {
    function UnderLink() {
       return (
-         <div className={styles.card} style={{ backgroundColor: myColor }}>
+         <div className={styles.card} style={{ "--my-color": myColor }}>
             {text}
          </div>
       );

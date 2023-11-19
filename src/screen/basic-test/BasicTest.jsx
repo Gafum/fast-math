@@ -29,6 +29,7 @@ function BacisTest() {
                      key={index}
                      text={option}
                      myClick={() => handleAnswerClick(option)}
+                     myColor={"#444"}
                   />
                ))}
             </ul>

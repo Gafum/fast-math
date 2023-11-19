@@ -9,6 +9,7 @@
 }
 
 .card {
+   --my-color: #912c2c;
    padding: 15px 8px;
    width: 100%;
    border-radius: 10px;
@@ -16,11 +17,12 @@
    font-size: 24px;
    transition: all 0.2s;
    color: white;
+   background-color: var(--my-color);
 }
 
 @media (hover: hover) {
    .card:hover {
       filter: brightness(1.1);
-      box-shadow: rgb(129, 129, 129) 0 0 5px;
+      box-shadow: var(--my-color) 0 0 5px;
    }
 }

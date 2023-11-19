@@ -5,7 +5,7 @@ function AnswerBtn({ text, myClick, myColor = undefined }) {
       <div
          className={styles.topicBtn}
          onClick={myClick}
-         style={{ backgroundColor: myColor }}
+         style={{ "--my-color": myColor }}
       >
          <span>{text}</span>
       </div>
