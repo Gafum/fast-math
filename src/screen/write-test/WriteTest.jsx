@@ -43,6 +43,7 @@ function WriteTest() {
                placeholder="Введіть текст"
                value={text.replace(/[^0-9-]+/g, "")}
                onChange={handleInputChange}
+               autoComplete="none"
             />
          </form>
          <Modal

@@ -202,6 +202,12 @@ export const testList = [
             result = (number * percent) / 100;
 
             remainder = result % number;
+
+            if (percent >= 105) {
+               percent = 25;
+               number = 12;
+               result = 3;
+            }
          }
          if (percent == 100 || percent <= 10) {
             let a = Randomizer.randomInteger(1, 9);
@@ -358,11 +364,11 @@ export const testList = [
       createQuestions: () => {
          let root1 = Randomizer.randomInteger(-10, 10);
          let root2 = Randomizer.randomInteger(-10, 10);
-         while (root1 === root2 && root1 === 0 && root2 === 0) {
+         
+         while (root1 === root2 || root1 === 0 || root2 === 0) {
             root1 = Randomizer.randomInteger(-10, 10);
             root2 = Randomizer.randomInteger(-10, 10);
          }
-
 
          const sumOfRoots = root1 + root2;
          const productOfRoots = root1 * root2;
@@ -406,6 +412,12 @@ export const testList = [
                divider++;
 
                remainder = answer % divider;
+
+               if (divider >= 100) {
+                  remainder = 0;
+                  answer = 12
+                  divider = 3
+               }
             }
 
             question = `Чому дорівнює середнє геометричне ${answer / divider} і ${answer * divider}?`;
