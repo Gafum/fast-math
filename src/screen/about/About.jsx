@@ -47,7 +47,12 @@ function AboutPage() {
             })}
          </ul>
          <Link to="/">
-            <img src="/favicon.svg" alt="icon" width="50px" height="50px" />
+            <img
+               src="/fast-math/favicon.svg"
+               alt="icon"
+               width="50px"
+               height="50px"
+            />
          </Link>
       </div>
    );
