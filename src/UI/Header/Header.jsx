@@ -12,6 +12,9 @@ function Header() {
             ></img>
             <span className={styles.navText}>Fast Math</span>
          </Link>
+         <Link to="/about" className={styles.aboutBtn}>
+            <span>?</span>
+         </Link>
       </nav>
    );
 }

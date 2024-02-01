@@ -1,0 +1,48 @@
+.aboutPage {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+   flex-direction: column;
+   gap: 15px;
+   padding-bottom: 100px;
+}
+
+.aboutPage > p {
+   text-align: center;
+   width: 100%;
+   font-size: 20px;
+   font-weight: 400;
+}
+
+.aboutPage strong {
+   font-size: 22px;
+   font-weight: bold;
+   margin-bottom: 5px;
+}
+
+.listOfLinks {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   align-content: center;
+   gap: 10px;
+   width: 100%;
+}
+
+.listOfLinks > li {
+   width: 100%;
+   text-align: left;
+   background-color: #303a66;
+   padding: 10px;
+   border-radius: 7px;
+   overflow: auto;
+   transition: box-shadow 0.3s;
+}
+
+@media (hover: hover) {
+   .listOfLinks > li:hover {
+      box-shadow: 0 0 10px #303a66;
+   }
+}

@@ -7,6 +7,9 @@
    z-index: 2;
    position: relative;
    box-shadow: #111 0px 1px 10px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
 
 .icon {
@@ -18,9 +21,32 @@
    transition: filter 0.2s;
 }
 
+.aboutBtn {
+   width: 30px;
+   height: 30px;
+   border-radius: 100%;
+   border: 3px solid white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+   transition: box-shadow 0.2s;
+}
+
+.aboutBtn > span {
+   position: relative;
+   right: -0.4px;
+   top: 0.4px;
+   font-size: 18px;
+}
+
 @media (hover: hover) {
    .icon:hover {
       filter: brightness(0.8);
+   }
+
+   .aboutBtn:hover {
+      box-shadow: 0 0 6px rgb(230, 230, 230);
    }
 }
 

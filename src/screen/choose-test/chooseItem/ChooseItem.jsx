@@ -20,7 +20,6 @@ function ChooseItem({ where, whatTopic, text, myColor }) {
          ) : (
             <a
                href={testList.find(({ id }) => id === whatTopic).link}
-               target="_blank"
                style={{ width: "100%" }}
             >
                <UnderLink />

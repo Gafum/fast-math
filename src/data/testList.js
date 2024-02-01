@@ -63,7 +63,8 @@ export const testList = [
    {
       name: "Множення двоцифрових чисел",
       id: "two-digit",
-      link: "https://youtu.be/CGZJhSnDeNI?si=z5TYKcnqb4viRY3k",
+      realLink: "https://www.youtube.com/watch?v=CtmRBlZ009w",
+      link: "https://drive.google.com/file/d/1XV_9x-QagDWdIcUFNz12czK7OmUsik5I/view",
       createQuestions: () => {
          let a = Randomizer.randomInteger(10, 99),
             b = Randomizer.randomInteger(10, 99);

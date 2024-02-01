@@ -5,11 +5,13 @@ import ChooseTest from "./screen/choose-test/ChooseTest.jsx";
 import WriteTest from "./screen/write-test/WriteTest.jsx";
 import TrueFalseTest from "./screen/true-false/TrueFalseTest.jsx";
 import RealExercizes from "./screen/realExercizes/RealExercizes.jsx";
+import AboutPage from "./screen/about/About.jsx";
 
 function Router() {
    return (
       <Routes>
          <Route path="/" element={<Home />} />
+         <Route path="/about" element={<AboutPage />} />
          <Route path="/choose/:whatTopic" element={<ChooseTest />} />
          <Route path="/basic-test/:whatTopic" element={<BacisTest />} />
          <Route path="/write-test/:whatTopic" element={<WriteTest />} />
