@@ -46,7 +46,7 @@ function BacisTest() {
                Правильна відповідь {currentQuestion.correctAnswer}
             </h1>
             <p style={{ fontSize: "25px" }}>
-               Ви назвали {score} правильних відповідей
+               Ви відповіли вірно на {score} запитань!
             </p>
          </Modal>
       </>
