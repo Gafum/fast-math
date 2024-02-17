@@ -1,7 +1,21 @@
+import { useEffect } from "react";
 import styles from "./MainConteiner.module.css";
+import { useLocation } from "react-router-dom";
+import { useRef } from "react";
 
 function MainConteiner({ children }) {
-   return <div className={styles.mainConteiner}>{children}</div>;
+   let location = useLocation();
+   let conteiner = useRef();
+
+   useEffect(() => {
+      conteiner.current.scrollTo(0, 0);
+   }, [location]);
+
+   return (
+      <div className={styles.mainConteiner} ref={conteiner}>
+         {children}
+      </div>
+   );
 }
 
 export default MainConteiner;

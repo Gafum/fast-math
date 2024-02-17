@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { testList } from "../../data/testList";
 import styles from "./About.module.css";
+import { useEffect } from "react";
 
 function AboutPage() {
    function ReturnLink({ link, txt }) {

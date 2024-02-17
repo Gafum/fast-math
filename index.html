@@ -22,15 +22,23 @@
       }
     })(window.location);
 
-    function setSize() {
+    document.addEventListener("DOMContentLoaded", () => {
+
+      if (window.innerHeight > 500 && window.innerWidth > 500) {
+        return;
+      }
+
+      let vmax = 1000;
+
+      if (window.innerHeight > window.innerWidth) {
+        vmax = window.innerHeight * 1.3
+      } else {
+        vmax = window.innerWidth * 1.3
+      }
+
       document.querySelector(".main-background")
-        .style = `--window-height: ${Math.round(window.innerHeight * 1.2).toString()}px;`;
-    }
-
-    document.addEventListener("DOMContentLoaded", setSize);
-
-    window.onresize = setSize;
-
+        .style = `--window-height: ${vmax.toString()}px;`;
+    });
 
   </script>
 </head>

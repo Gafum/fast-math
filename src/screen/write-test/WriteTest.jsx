@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import genereteQuestion from "../../custom-hooks/useQuestionGenerator";
 import Modal from "../../UI/Modal/Modal";
+import styles from "./WriteTest.module.css";
 
 function WriteTest() {
    const [text, setText] = useState("");
    const { currentQuestion, generateNewQuestion } = genereteQuestion();
    const [score, setScore] = useState(0);
+   const myInput = useRef();
 
    const [modalIsOpen, openCloseModal] = useState(false);
 
@@ -30,21 +32,30 @@ function WriteTest() {
       }
    };
 
+   useEffect(() => {
+      myInput.current.focus();
+   }, [currentQuestion]);
+
    return (
       <>
          <form onSubmit={submitForm}>
             <h1 className="question">{currentQuestion.question}</h1>
-            <input
-               autoFocus
-               name="answer"
-               style={{ marginTop: "25px" }}
-               type="text"
-               inputMode="numeric"
-               placeholder="Введіть текст"
-               value={text.replace(/[^0-9-]+/g, "")}
-               onChange={handleInputChange}
-               autoComplete="none"
-            />
+            <div className={styles.writeBlock}>
+               <input
+                  autoFocus
+                  name="answer"
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="Введіть текст"
+                  value={text.replace(/[^0-9-]+/g, "")}
+                  onChange={handleInputChange}
+                  autoComplete="none"
+                  ref={myInput}
+               />
+               <button className={styles.submitBtn} type="submit">
+                  Ok
+               </button>
+            </div>
          </form>
          <Modal
             isOpen={modalIsOpen}

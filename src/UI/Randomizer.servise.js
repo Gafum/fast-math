@@ -10,7 +10,6 @@ export default class Randomizer {
 
 export function createOptions(question, correctAnswer, isSimple = false) {
    let listOfAnswers = [correctAnswer];
-   console.log("I am here");
 
    listOfAnswers[1] = String(
       correctAnswer - Randomizer.randomInteger(1, 11)

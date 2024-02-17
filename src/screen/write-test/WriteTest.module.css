@@ -1,0 +1,39 @@
+.writeBlock {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 10px;
+   align-content: center;
+   gap: 10px;
+}
+
+.writeBlock > input {
+   flex: 1;
+}
+
+.submitBtn {
+   padding: 4px 16px;
+   background-color: #493066;
+   font-size: 24px;
+   border-radius: 5px;
+   transition: background-color 0.2s;
+}
+
+@media (hover: hover) {
+   .submitBtn:hover,
+   .submitBtn:focus {
+      background-color: #5b3a7f;
+   }
+}
+
+@media (max-width: 480px) {
+   .writeBlock {
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   .submitBtn {
+      width: 100%;
+      max-width: 320px;
+   }
+}
