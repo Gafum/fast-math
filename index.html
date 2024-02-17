@@ -21,6 +21,17 @@
         window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
       }
     })(window.location);
+
+    function setSize() {
+      document.querySelector(".main-background")
+        .style = `--window-height: ${Math.round(window.innerHeight * 1.2).toString()}px;`;
+    }
+
+    document.addEventListener("DOMContentLoaded", setSize);
+
+    window.onresize = setSize;
+
+
   </script>
 </head>
 

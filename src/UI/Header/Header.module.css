@@ -54,3 +54,9 @@
    margin-left: 10px;
    font-size: 33px;
 }
+
+@media (max-width: 300px) {
+   .nav {
+      padding: 15px;
+   }
+}

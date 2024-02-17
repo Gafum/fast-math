@@ -44,8 +44,7 @@
 
 @media (max-width: 480px) {
    .cardsList {
-      display: flex;
-      flex-direction: column;
+      grid-template-columns: repeat(1, 1fr);
    }
 
    .topicBtn {

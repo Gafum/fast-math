@@ -60,7 +60,17 @@ body {
 
 input,
 button,
-textarea {
+textarea,
+select {
+   -webkit-user-select: initial;
+   -khtml-user-select: initial;
+   -moz-user-select: initial;
+   -ms-user-select: initial;
+   user-select: initial;
+   pointer-events: all;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
    font-family: inherit;
 }
 
@@ -71,6 +81,9 @@ button {
    cursor: pointer;
    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
    -webkit-tap-highlight-color: transparent;
+}
+select {
+   cursor: pointer;
 }
 button::-moz-focus-inner {
    padding: 0;
@@ -111,14 +124,17 @@ body {
 }
 
 .main-background {
+   --window-height: 120vmax;
    background-color: #111;
    background-image: url("/wordcloud.svg");
    position: fixed;
    top: 0;
    left: 0;
    pointer-events: none;
-   width: 120vmax;
-   height: 120vmax;
+   width: 120%;
+   height: 120%;
+   width: var(--window-height);
+   height: var(--window-height);
    z-index: -1;
    background-position-x: center;
    background-position-y: -150px;
