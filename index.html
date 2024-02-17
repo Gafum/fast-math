@@ -22,19 +22,27 @@
       }
     })(window.location);
 
-    function setSize() {
+    document.addEventListener("DOMContentLoaded", () => {
+
+      if (window.innerHeight > 500 && window.innerWidth > 500) {
+        return;
+      }
+
+      let vmax = 1000;
+
+      if (window.innerHeight > window.innerWidth) {
+        vmax = window.innerHeight * 1.3
+      } else {
+        vmax = window.innerWidth * 1.3
+      }
+
       document.querySelector(".main-background")
-        .style = `--window-height: ${Math.round(window.innerHeight * 1.2).toString()}px;`;
-    }
-
-    document.addEventListener("DOMContentLoaded", setSize);
-
-    window.onresize = setSize;
-
+        .style = `--window-height: ${vmax.toString()}px;`;
+    });
 
   </script>
-  <script type="module" crossorigin src="/fast-math/assets/index-55f1a705.js"></script>
-  <link rel="stylesheet" href="/fast-math/assets/index-e02e6782.css">
+  <script type="module" crossorigin src="/fast-math/assets/index-7e0438a5.js"></script>
+  <link rel="stylesheet" href="/fast-math/assets/index-15b9e7dc.css">
 </head>
 
 <body>
