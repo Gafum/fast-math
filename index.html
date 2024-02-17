@@ -21,9 +21,20 @@
         window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
       }
     })(window.location);
+
+    function setSize() {
+      document.querySelector(".main-background")
+        .style = `--window-height: ${Math.round(window.innerHeight * 1.2).toString()}px;`;
+    }
+
+    document.addEventListener("DOMContentLoaded", setSize);
+
+    window.onresize = setSize;
+
+
   </script>
-  <script type="module" crossorigin src="/fast-math/assets/index-9c77b156.js"></script>
-  <link rel="stylesheet" href="/fast-math/assets/index-ac38b34d.css">
+  <script type="module" crossorigin src="/fast-math/assets/index-55f1a705.js"></script>
+  <link rel="stylesheet" href="/fast-math/assets/index-e02e6782.css">
 </head>
 
 <body>
