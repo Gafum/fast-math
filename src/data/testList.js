@@ -280,9 +280,11 @@ export const testList = [
       createQuestions: () => {
          let a = Randomizer.randomInteger(2, 9),
             b = Randomizer.randomInteger(2, 9);
-         return createOptions(Randomizer.randomInteger(0, 1) ?
-            `${a} * x = ${a * b},  x =` :
-            `${a * b} / x = ${a},  x =`, b);
+
+         let equation = Randomizer.randomInteger(0, 1) ?
+            `${a} * x = ${a * b}` :
+            `${a * b} / x = ${a}`
+         return createOptions("Чому дорівнює x в рівнянні <br/>" + equation + " ?", b);
       },
       realExercises: [
          {
@@ -334,7 +336,7 @@ export const testList = [
                   `${a} - ${b} + x = ${result}` :
                   `${a} + x - ${b} = ${result}`
          }
-         return createOptions(equation + ", x =", x);
+         return createOptions("Чому дорівнює x в рівнянні <br/>" + equation + " ?", x);
       },
       realExercises: [
          {
@@ -365,7 +367,7 @@ export const testList = [
       createQuestions: () => {
          let root1 = Randomizer.randomInteger(-10, 10);
          let root2 = Randomizer.randomInteger(-10, 10);
-         
+
          while (root1 === root2 || root1 === 0 || root2 === 0) {
             root1 = Randomizer.randomInteger(-10, 10);
             root2 = Randomizer.randomInteger(-10, 10);
@@ -374,7 +376,8 @@ export const testList = [
          const sumOfRoots = root1 + root2;
          const productOfRoots = root1 * root2;
 
-         return createOptions(`x^2 ${(sumOfRoots > 0 ? "- " : "+ ") + Math.abs(sumOfRoots)}x ${(productOfRoots > 0 ? "+ " : "- ") + Math.abs(productOfRoots)} = 0, x1 + x2 =`, root1 + root2);
+         return createOptions(`Чому дорівнює сума коренів рівняння <br/>
+         x^2 ${(sumOfRoots > 0 ? "- " : "+ ") + Math.abs(sumOfRoots)}x ${(productOfRoots > 0 ? "+ " : "- ") + Math.abs(productOfRoots)} = 0 ?`, root1 + root2);
       },
       realExercises: [
          {
@@ -421,10 +424,10 @@ export const testList = [
                }
             }
 
-            question = `Чому дорівнює середнє геометричне ${answer / divider} і ${answer * divider}?`;
+            question = `Чому дорівнює середнє геометричне ${answer / divider} і ${answer * divider} ?`;
          } else {
             let application = Randomizer.randomInteger(1, 15);
-            question = `Чому дорівнює середнє арифметичне ${answer - application} і ${answer + application}?`;
+            question = `Чому дорівнює середнє арифметичне ${answer - application} і ${answer + application} ?`;
          }
 
 

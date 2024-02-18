@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import genereteQuestion from "../../custom-hooks/useQuestionGenerator";
 import Modal from "../../UI/Modal/Modal";
 import styles from "./WriteTest.module.css";
+import { addRealEnter } from "../basic-test/BasicTest";
 
 function WriteTest() {
    const [text, setText] = useState("");
@@ -39,7 +40,9 @@ function WriteTest() {
    return (
       <>
          <form onSubmit={submitForm}>
-            <h1 className="question">{currentQuestion.question}</h1>
+            <h1 className="question">
+               {addRealEnter(currentQuestion.question)}
+            </h1>
             <div className={styles.writeBlock}>
                <input
                   autoFocus

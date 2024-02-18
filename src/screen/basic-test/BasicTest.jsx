@@ -4,6 +4,25 @@ import styles from "./../home/Home.module.css";
 import useQuestionGenerator from "../../custom-hooks/useQuestionGenerator";
 import Modal from "../../UI/Modal/Modal";
 
+export function addRealEnter(question = "") {
+   if (!question.includes("<br/>")) {
+      return question;
+   }
+
+   return (
+      <>
+         {question.split("<br/>").map((text) => {
+            return (
+               <>
+                  {text}
+                  <br />
+               </>
+            );
+         })}
+      </>
+   );
+}
+
 function BacisTest() {
    const { currentQuestion, generateNewQuestion } = useQuestionGenerator();
    const [score, setScore] = useState(0);
@@ -22,7 +41,9 @@ function BacisTest() {
    return (
       <>
          <div>
-            <h1 className="question">{currentQuestion.question}</h1>
+            <h1 className="question">
+               {addRealEnter(currentQuestion.question)}
+            </h1>
             <ul className={styles.cardsList} style={{ marginTop: "20px" }}>
                {currentQuestion.options.map((option, index) => (
                   <AnswerBtn

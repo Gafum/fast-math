@@ -3,6 +3,7 @@ import useQuestionGenerator from "../../custom-hooks/useQuestionGenerator";
 import AnswerBtn from "../basic-test/answer-btn/AnswerBtn";
 import styles from "./TrueFalseTest.module.css";
 import Modal from "../../UI/Modal/Modal";
+import { addRealEnter } from "../basic-test/BasicTest";
 
 function TrueFalseTest() {
    const { currentQuestion, generateNewQuestion } = useQuestionGenerator();
@@ -19,10 +20,23 @@ function TrueFalseTest() {
       }
    }
 
+   function formQuestionTF(question = "", rightAnswer = 23) {
+      let result = question.toLowerCase();
+      if (question.startsWith("Чому дорівнює ")) {
+         result = question.slice(14, question.length - 1).trim() + " дорівнює";
+      }
+      return `Чи правда, що ${result} ${rightAnswer} ?`;
+   }
+
    return (
       <>
          <h1 className="question">
-            {currentQuestion.question + " " + currentQuestion.options[0]}
+            {addRealEnter(
+               formQuestionTF(
+                  currentQuestion.question,
+                  currentQuestion.options[0]
+               )
+            )}
          </h1>
          <div className={styles.selectedList}>
             <AnswerBtn
