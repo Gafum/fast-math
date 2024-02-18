@@ -31,18 +31,18 @@
       let vmax = 1000;
 
       if (window.innerHeight > window.innerWidth) {
-        vmax = window.innerHeight * 1.3
+        vmax = window.innerHeight
       } else {
-        vmax = window.innerWidth * 1.3
+        vmax = window.innerWidth
       }
 
       document.querySelector(".main-background")
-        .style = `--window-height: ${vmax.toString()}px;`;
+        .style = `--window-height: ${(vmax * 1.2).toString()}px;`;
     });
 
   </script>
-  <script type="module" crossorigin src="/fast-math/assets/index-7e0438a5.js"></script>
-  <link rel="stylesheet" href="/fast-math/assets/index-15b9e7dc.css">
+  <script type="module" crossorigin src="/fast-math/assets/index-681de654.js"></script>
+  <link rel="stylesheet" href="/fast-math/assets/index-cd0b7d8a.css">
 </head>
 
 <body>
