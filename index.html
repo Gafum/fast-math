@@ -31,13 +31,13 @@
       let vmax = 1000;
 
       if (window.innerHeight > window.innerWidth) {
-        vmax = window.innerHeight * 1.3
+        vmax = window.innerHeight
       } else {
-        vmax = window.innerWidth * 1.3
+        vmax = window.innerWidth
       }
 
       document.querySelector(".main-background")
-        .style = `--window-height: ${vmax.toString()}px;`;
+        .style = `--window-height: ${(vmax * 1.2).toString()}px;`;
     });
 
   </script>
