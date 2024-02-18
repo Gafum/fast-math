@@ -19,8 +19,13 @@
    border-radius: 8px;
 }
 
+.invisibleBox {
+   height: 120px;
+   width: 100%;
+}
+
 @media (max-width: 480px) {
    .mainConteiner {
-      padding: 15px 10px 50px;
+      padding: 15px 10px;
    }
 }

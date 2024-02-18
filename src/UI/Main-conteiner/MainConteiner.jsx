@@ -14,6 +14,7 @@ function MainConteiner({ children }) {
    return (
       <div className={styles.mainConteiner} ref={conteiner}>
          {children}
+         <div className={styles.invisibleBox}></div>
       </div>
    );
 }

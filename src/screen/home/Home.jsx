@@ -28,7 +28,6 @@ function Home() {
                color={colorList[index]}
             />
          ))}
-         <div className={styles.invisibleBox}></div>
       </div>
    );
 }
