@@ -2,6 +2,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import ChooseItem from "./chooseItem/ChooseItem";
 import styles from "./ChooseTest.module.css";
 import { testList } from "../../data/testList";
+import { motion } from "framer-motion";
+import { ScreensAnimation } from "../../assets/CustomData/animation";
 
 function ChooseTest() {
    const { whatTopic } = useParams();
@@ -19,7 +21,7 @@ function ChooseTest() {
       );
    }
    return (
-      <div className={styles.cardList}>
+      <motion.div className={styles.cardList} {...ScreensAnimation}>
          <ChooseItem
             where={"basic-test"}
             text={"Простий тест"}
@@ -50,7 +52,7 @@ function ChooseTest() {
             myColor={"#306740"}
             whatTopic={whatTopic}
          />
-      </div>
+      </motion.div>
    );
 }
 

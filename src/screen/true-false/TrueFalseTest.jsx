@@ -4,6 +4,8 @@ import AnswerBtn from "../basic-test/answer-btn/AnswerBtn";
 import styles from "./TrueFalseTest.module.css";
 import Modal from "../../UI/Modal/Modal";
 import { addRealEnter } from "../basic-test/BasicTest";
+import { LazyMotion, domAnimation, m } from "framer-motion";
+import { SimpleAnimation } from "../../assets/CustomData/animation";
 
 function TrueFalseTest() {
    const { currentQuestion, generateNewQuestion } = useQuestionGenerator();
@@ -29,52 +31,55 @@ function TrueFalseTest() {
    }
 
    return (
-      <>
-         <h1 className="question">
-            {addRealEnter(
-               formQuestionTF(
-                  currentQuestion.question,
-                  currentQuestion.options[0]
-               )
-            )}
-         </h1>
-         <div className={styles.selectedList}>
-            <AnswerBtn
-               myColor={"#2C6A91"}
-               text={"Правда"}
-               myClick={() =>
-                  handleAnswerClick(
-                     currentQuestion.options[0] == currentQuestion.correctAnswer
-                  )
-               }
-            />
-            <AnswerBtn
-               myColor={"#912C2C"}
-               text={"Хиба"}
-               myClick={() =>
-                  handleAnswerClick(
-                     currentQuestion.options[0] !==
-                        currentQuestion.correctAnswer
-                  )
-               }
-            />
-         </div>
-         <Modal
-            isOpen={modalIsOpen}
-            closeModal={() => {
-               generateNewQuestion();
-               openCloseModal(false);
-               setScore(0);
-            }}
-         >
+      <LazyMotion features={domAnimation}>
+         <m.div {...SimpleAnimation}>
             <h1 className="question">
-               Правильна відповідь {currentQuestion.correctAnswer}
+               {addRealEnter(
+                  formQuestionTF(
+                     currentQuestion.question,
+                     currentQuestion.options[0]
+                  )
+               )}
             </h1>
-            <p style={{ fontSize: "25px" }}>
-               Ви відповіли вірно на {score} запитань!
-            </p>
-         </Modal>
-      </>
+            <div className={styles.selectedList}>
+               <AnswerBtn
+                  myColor={"#2C6A91"}
+                  text={"Правда"}
+                  myClick={() =>
+                     handleAnswerClick(
+                        currentQuestion.options[0] ==
+                           currentQuestion.correctAnswer
+                     )
+                  }
+               />
+               <AnswerBtn
+                  myColor={"#912C2C"}
+                  text={"Хиба"}
+                  myClick={() =>
+                     handleAnswerClick(
+                        currentQuestion.options[0] !==
+                           currentQuestion.correctAnswer
+                     )
+                  }
+               />
+            </div>
+            <Modal
+               isOpen={modalIsOpen}
+               closeModal={() => {
+                  generateNewQuestion();
+                  openCloseModal(false);
+                  setScore(0);
+               }}
+            >
+               <h1 className="question">
+                  Правильна відповідь {currentQuestion.correctAnswer}
+               </h1>
+               <p style={{ fontSize: "25px" }}>
+                  Ви відповіли вірно на {score} запитань!
+               </p>
+            </Modal>
+         </m.div>
+      </LazyMotion>
    );
 }
 

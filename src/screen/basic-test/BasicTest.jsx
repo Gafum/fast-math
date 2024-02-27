@@ -3,6 +3,8 @@ import AnswerBtn from "./answer-btn/AnswerBtn";
 import styles from "./../home/Home.module.css";
 import useQuestionGenerator from "../../custom-hooks/useQuestionGenerator";
 import Modal from "../../UI/Modal/Modal";
+import { SimpleAnimation } from "../../assets/CustomData/animation";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 export function addRealEnter(question = "") {
    if (!question.includes("<br/>")) {
@@ -39,8 +41,8 @@ function BacisTest() {
    }
 
    return (
-      <>
-         <div>
+      <LazyMotion features={domAnimation}>
+         <m.div {...SimpleAnimation}>
             <h1 className="question">
                {addRealEnter(currentQuestion.question)}
             </h1>
@@ -54,7 +56,7 @@ function BacisTest() {
                   />
                ))}
             </ul>
-         </div>
+         </m.div>
          <Modal
             isOpen={modalIsOpen}
             closeModal={() => {
@@ -70,7 +72,7 @@ function BacisTest() {
                Ви відповіли вірно на {score} запитань!
             </p>
          </Modal>
-      </>
+      </LazyMotion>
    );
 }
 

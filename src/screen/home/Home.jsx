@@ -1,6 +1,8 @@
 import TopicBtn from "./Topic-btn/Topic-btn";
 import styles from "./Home.module.css";
 import { testList } from "../../data/testList";
+import { ScreensAnimation } from "../../assets/CustomData/animation";
+import { motion } from "framer-motion";
 
 const colorList = [
    "#493066",
@@ -19,7 +21,10 @@ const colorList = [
 
 function Home() {
    return (
-      <div className={`${styles.cardsList} ${styles.inMenu}`}>
+      <motion.div
+         className={`${styles.cardsList} ${styles.inMenu}`}
+         {...ScreensAnimation}
+      >
          {testList.map((element, index) => (
             <TopicBtn
                key={element.id}
@@ -28,7 +33,7 @@ function Home() {
                color={colorList[index]}
             />
          ))}
-      </div>
+      </motion.div>
    );
 }
 

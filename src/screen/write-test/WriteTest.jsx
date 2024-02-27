@@ -3,6 +3,8 @@ import genereteQuestion from "../../custom-hooks/useQuestionGenerator";
 import Modal from "../../UI/Modal/Modal";
 import styles from "./WriteTest.module.css";
 import { addRealEnter } from "../basic-test/BasicTest";
+import { LazyMotion, domAnimation, m } from "framer-motion";
+import { SimpleAnimation } from "../../assets/CustomData/animation";
 
 function WriteTest() {
    const [text, setText] = useState("");
@@ -38,8 +40,8 @@ function WriteTest() {
    }, [currentQuestion]);
 
    return (
-      <>
-         <form onSubmit={submitForm}>
+      <LazyMotion features={domAnimation}>
+         <m.form onSubmit={submitForm} {...SimpleAnimation}>
             <h1 className="question">
                {addRealEnter(currentQuestion.question)}
             </h1>
@@ -59,7 +61,7 @@ function WriteTest() {
                   Ok
                </button>
             </div>
-         </form>
+         </m.form>
          <Modal
             isOpen={modalIsOpen}
             closeModal={() => {
@@ -76,7 +78,7 @@ function WriteTest() {
                Ви відповіли вірно на {score} запитань!
             </p>
          </Modal>
-      </>
+      </LazyMotion>
    );
 }
 

@@ -1,21 +1,30 @@
 import { Link } from "react-router-dom";
 import { testList } from "../../data/testList";
 import styles from "./About.module.css";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
+import {
+   AnimateList,
+   ScreensAnimation,
+} from "../../assets/CustomData/animation";
 
 function AboutPage() {
-   function ReturnLink({ link, txt }) {
+   function ReturnLink({ link, txt, index }) {
       return (
-         <li>
+         <motion.li
+            variants={AnimateList}
+            animate="visible"
+            initial="hidden"
+            custom={index}
+         >
             <a href={link} target="_blank">
                {txt} : {link}
             </a>
-         </li>
+         </motion.li>
       );
    }
 
    return (
-      <div className={styles.aboutPage}>
+      <motion.div className={styles.aboutPage} {...ScreensAnimation}>
          <p>
             Ласкаво просимо до <strong>Fast Math!</strong>
          </p>
@@ -40,11 +49,20 @@ function AboutPage() {
             <strong>Використані джерела:</strong>
          </p>
          <ul className={styles.listOfLinks}>
-            {testList.map(({ link, realLink, name }) => {
+            {testList.map(({ link, realLink, name }, index) => {
                if (realLink) {
-                  return <ReturnLink key={name} link={realLink} txt={name} />;
+                  return (
+                     <ReturnLink
+                        key={name}
+                        link={realLink}
+                        txt={name}
+                        index={index}
+                     />
+                  );
                }
-               return <ReturnLink key={name} link={link} txt={name} />;
+               return (
+                  <ReturnLink key={name} link={link} txt={name} index={index} />
+               );
             })}
          </ul>
          <Link to="/">
@@ -55,7 +73,7 @@ function AboutPage() {
                height="50px"
             />
          </Link>
-      </div>
+      </motion.div>
    );
 }
 
