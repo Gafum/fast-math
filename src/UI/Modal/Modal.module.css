@@ -36,10 +36,6 @@
    gap: 15px;
 }
 
-.modal.active .modal__content {
-   animation: showModal 0.4s ease;
-}
-
 .modal__btn {
    padding: 5px 20px;
    border-radius: 5px;
@@ -72,23 +68,9 @@
    background-color: #2c6a91;
 }
 
-@keyframes simpleAnimation {
-   0% {
-      opacity: 0;
-   }
-   100% {
-      opacity: 1;
-   }
-}
-
-@keyframes showModal {
-   0% {
-      opacity: 0;
-      top: -70px;
-   }
-   100% {
-      opacity: 1;
-      top: -100px;
+@media (min-width: 485px) {
+   .modal.active .modal__content {
+      animation: showModal 0.4s ease;
    }
 }
 
@@ -112,5 +94,25 @@
 @media (hover: hover) {
    .modal__btn.modal__btn_blue:hover {
       box-shadow: 0px 0px 8px #2c6a91de;
+   }
+}
+
+@keyframes simpleAnimation {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+@keyframes showModal {
+   0% {
+      opacity: 0;
+      top: -70px;
+   }
+   100% {
+      opacity: 1;
+      top: -100px;
    }
 }

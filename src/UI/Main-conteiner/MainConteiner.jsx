@@ -8,7 +8,9 @@ function MainConteiner({ children }) {
    let conteiner = useRef();
 
    useEffect(() => {
-      conteiner.current.scrollTo(0, 0);
+      setTimeout(() => {
+         conteiner.current.scrollTo({ top: 0 });
+      }, 200);
    }, [location]);
 
    return (

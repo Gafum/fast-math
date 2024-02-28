@@ -68,7 +68,7 @@ function RealExercizes() {
                            showAnswers[index] ? styles.showAnswer : ""
                         }`}
                      >
-                        {item.answer}
+                        <span>{item.answer}</span>
                      </p>
                   </m.div>
                ))}

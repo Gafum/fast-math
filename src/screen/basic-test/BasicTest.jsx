@@ -43,9 +43,11 @@ function BacisTest() {
    return (
       <LazyMotion features={domAnimation}>
          <m.div {...SimpleAnimation}>
-            <h1 className="question">
-               {addRealEnter(currentQuestion.question)}
-            </h1>
+            {currentQuestion && (
+               <h1 className="question">
+                  {addRealEnter(currentQuestion.question)}
+               </h1>
+            )}
             <ul className={styles.cardsList} style={{ marginTop: "20px" }}>
                {currentQuestion.options.map((option, index) => (
                   <AnswerBtn
@@ -57,6 +59,7 @@ function BacisTest() {
                ))}
             </ul>
          </m.div>
+
          <Modal
             isOpen={modalIsOpen}
             closeModal={() => {

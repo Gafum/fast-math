@@ -7,14 +7,21 @@
 }
 
 .answer {
-   display: none;
+   display: grid;
+   grid-template-rows: 0fr;
    margin-top: 10px;
    font-size: 24px;
    text-align: center;
+   transition: grid-template-rows 0.4s;
+}
+
+.answer > span {
+   overflow: hidden;
+   font-size: inherit;
 }
 
 .showAnswer {
-   display: block;
+   grid-template-rows: 1fr;
 }
 
 .titleContainer {
