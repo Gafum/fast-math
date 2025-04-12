@@ -4,7 +4,7 @@ Fast Math is a web application designed to help users improve their math skills 
 
 ## Getting Started
 
-To run the project locally, simply clone this repository and navigate to the project directory. Then, run the command `yarn dev` to start the development server. Make any changes as necessary, and use `git push` to deploy the changes to your repository.
+To run the project locally, simply clone this repository and navigate to the project directory. Download all packages with `yarn install`. Then, run the command `yarn dev` to start the development server. Make any changes as necessary, and use `git push` to deploy the changes to your repository.
 
 ## Features
 
