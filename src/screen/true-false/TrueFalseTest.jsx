@@ -6,12 +6,16 @@ import Modal from "../../UI/Modal/Modal";
 import { addRealEnter } from "../basic-test/BasicTest";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { SimpleAnimation } from "../../assets/CustomData/animation";
+import { translationData } from "../../data/translationData";
+import { getLanguage } from "../../functions/getLanguage";
 
 function TrueFalseTest() {
    const { currentQuestion, generateNewQuestion } = useQuestionGenerator();
    const [score, setScore] = useState(0);
 
    const [modalIsOpen, openCloseModal] = useState(false);
+
+   const lang = getLanguage();
 
    function handleAnswerClick(selectedAnswer) {
       if (selectedAnswer) {
@@ -27,7 +31,7 @@ function TrueFalseTest() {
       if (question.startsWith("Чому дорівнює ")) {
          result = question.slice(14, question.length - 1).trim() + " дорівнює";
       }
-      return `Чи правда, що ${result} ${rightAnswer} ?`;
+      return `${translationData[lang].trueFalse.questionStart} ${result} ${rightAnswer} ?`;
    }
 
    return (
@@ -44,7 +48,7 @@ function TrueFalseTest() {
             <div className={styles.selectedList}>
                <AnswerBtn
                   myColor={"#2C6A91"}
-                  text={"Правда"}
+                  text={translationData[lang].trueFalse.true}
                   myClick={() =>
                      handleAnswerClick(
                         currentQuestion.options[0] ==
@@ -54,7 +58,7 @@ function TrueFalseTest() {
                />
                <AnswerBtn
                   myColor={"#912C2C"}
-                  text={"Хиба"}
+                  text={translationData[lang].trueFalse.false}
                   myClick={() =>
                      handleAnswerClick(
                         currentQuestion.options[0] !==

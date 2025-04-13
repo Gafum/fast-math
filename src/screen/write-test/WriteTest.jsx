@@ -5,6 +5,8 @@ import styles from "./WriteTest.module.css";
 import { addRealEnter } from "../basic-test/BasicTest";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { SimpleAnimation } from "../../assets/CustomData/animation";
+import { translationData } from "../../data/translationData";
+import { getLanguage } from "../../functions/getLanguage";
 
 function WriteTest() {
    const [text, setText] = useState("");
@@ -51,7 +53,10 @@ function WriteTest() {
                   name="answer"
                   type="text"
                   inputMode="numeric"
-                  placeholder="Введіть текст"
+                  placeholder={
+                     translationData[getLanguage()].writeTest.placeholder +
+                     "..."
+                  }
                   value={text.replace(/[^0-9-]+/g, "")}
                   onChange={handleInputChange}
                   autoComplete="none"

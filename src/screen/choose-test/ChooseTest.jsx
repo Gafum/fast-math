@@ -4,6 +4,8 @@ import styles from "./ChooseTest.module.css";
 import { testList } from "../../data/testList";
 import { motion } from "framer-motion";
 import { ScreensAnimation } from "../../assets/CustomData/animation";
+import { getLanguage } from "../../functions/getLanguage";
+import { translationData } from "../../data/translationData";
 
 function ChooseTest() {
    const { whatTopic } = useParams();
@@ -20,35 +22,38 @@ function ChooseTest() {
          </h1>
       );
    }
+
+   const lang = getLanguage();
+
    return (
       <motion.div className={styles.cardList} {...ScreensAnimation}>
          <ChooseItem
             where={"basic-test"}
-            text={"Простий тест"}
+            text={translationData[lang].choseTest["basic-test"]}
             myColor={"#912C2C"}
             whatTopic={whatTopic}
          />
          <ChooseItem
             where={"write-test"}
-            text={"Вписати відповідь"}
+            text={translationData[lang].choseTest["write-test"]}
             myColor={"#2C9182"}
             whatTopic={whatTopic}
          />
          <ChooseItem
             where={"true-false"}
-            text={"Правда Хиба"}
+            text={translationData[lang].choseTest["true-false"]}
             myColor={"#2C6A91"}
             whatTopic={whatTopic}
          />
          <ChooseItem
             where={"exercizes"}
-            text={"Приклади із ЗНО "}
+            text={translationData[lang].choseTest["exercizes"]}
             myColor={"#493066"}
             whatTopic={whatTopic}
          />
 
          <ChooseItem
-            text={"Як це робити швидко?"}
+            text={translationData[lang].choseTest["video"]}
             myColor={"#306740"}
             whatTopic={whatTopic}
          />

@@ -1,8 +1,10 @@
+import { getLanguage } from "../functions/getLanguage";
 import Randomizer, { createOptions } from "../UI/Randomizer.servise";
+import { translationData } from "./translationData";
 
 export const testList = [
    {
-      name: "Множення на 9",
+      name: translationData[getLanguage()].testList[0].name ?? translationData.en.testList[0].name,
       id: "multiply-by-9",
       link: "https://youtu.be/s4qJ8ew6lio?si=vLCJLnd9V5ClGzou",
       createQuestions: () => {
@@ -29,7 +31,7 @@ export const testList = [
       ]
    },
    {
-      name: "Множення чисел від 10 до 20",
+      name: translationData[getLanguage()].testList[1].name ?? translationData.en.testList[1].name,
       id: "digit-numbers",
       link: "https://sites.google.com/roli.ho.ua/easy-math-digit-numbers?usp=sharing",
       createQuestions: () => {
@@ -61,7 +63,7 @@ export const testList = [
       ]
    },
    {
-      name: "Множення двоцифрових чисел",
+      name: translationData[getLanguage()].testList[2].name ?? translationData.en.testList[2].name,
       id: "two-digit",
       realLink: "https://www.youtube.com/watch?v=CtmRBlZ009w",
       link: "https://drive.google.com/file/d/1XV_9x-QagDWdIcUFNz12czK7OmUsik5I/view",
@@ -95,7 +97,7 @@ export const testList = [
       ]
    },
    {
-      name: "Вправи на ділення",
+      name: translationData[getLanguage()].testList[3].name ?? translationData.en.testList[3].name,
       id: "division",
       link: "https://youtu.be/k5gMbFmZAG8?si=AYmyb0fAfZsk1Bva",
       createQuestions: () => {
@@ -128,7 +130,7 @@ export const testList = [
       ]
    },
    {
-      name: "Квадрати натуральних чисел",
+      name: translationData[getLanguage()].testList[4].name ?? translationData.en.testList[4].name,
       id: "square",
       link: "https://youtu.be/kBDGBD6GIKI?si=uQTgDZApwfOdOEqt",
       createQuestions: () => {
@@ -160,7 +162,7 @@ export const testList = [
       ]
    },
    {
-      name: "Корені натуральних чисел",
+      name: translationData[getLanguage()].testList[5].name ?? translationData.en.testList[5].name,
       id: "square-root",
       link: "https://narodna-osvita.com.ua/511-kvadratn-koren-dysn-chisla.html",
       createQuestions: () => {
@@ -192,7 +194,7 @@ export const testList = [
       ]
    },
    {
-      name: "Пошук відсотків від числа",
+      name: translationData[getLanguage()].testList[6].name ?? translationData.en.testList[6].name,
       id: "percent",
       link: "https://youtu.be/XEPb9OxdudY?si=Vo3eycyGzZk3y-_5",
       createQuestions: () => {
@@ -241,7 +243,7 @@ export const testList = [
       ]
    },
    {
-      name: "Вправи на логарифми",
+      name: translationData[getLanguage()].testList[7].name ?? translationData.en.testList[7].name,
       id: "log",
       link: "https://youtu.be/Vqe7X4VIX1c?si=FnaQFyIc074-dEyQ",
       createQuestions: () => {
@@ -274,7 +276,7 @@ export const testList = [
       ]
    },
    {
-      name: "Лінійні рівняння",
+      name: translationData[getLanguage()].testList[8].name ?? translationData.en.testList[8].name,
       id: "easy-equation",
       link: "https://youtu.be/hoM0AHKTc7k?si=jVqya9SVDJ8Va0S2",
       createQuestions: () => {
@@ -310,7 +312,7 @@ export const testList = [
       ]
    },
    {
-      name: "Прості рівняння",
+      name: translationData[getLanguage()].testList[9].name ?? translationData.en.testList[9].name,
       id: "equation",
       link: "https://youtu.be/6dihno5V-5Y?si=WomknX_WyCkEGmFc",
       createQuestions: () => {
@@ -361,7 +363,7 @@ export const testList = [
       ]
    },
    {
-      name: "Квадратні рівняння",
+      name: translationData[getLanguage()].testList[10].name ?? translationData.en.testList[10].name,
       id: "quadratic-equation",
       link: "https://www.youtube.com/watch?v=XlRO2uduCKc",
       createQuestions: () => {
@@ -403,7 +405,7 @@ export const testList = [
       ]
    },
    {
-      name: "Середні величини",
+      name: translationData[getLanguage()].testList[11].name ?? translationData.en.testList[11].name,
       id: "average-mean",
       link: "https://formula.co.ua/uk/content/mean.html",
       createQuestions: () => {
