@@ -2,12 +2,12 @@ import { useState } from "react";
 import useQuestionGenerator from "../../custom-hooks/useQuestionGenerator";
 import AnswerBtn from "../basic-test/answer-btn/AnswerBtn";
 import styles from "./TrueFalseTest.module.css";
-import Modal from "../../UI/Modal/Modal";
-import { addRealEnter } from "../basic-test/BasicTest";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { SimpleAnimation } from "../../assets/CustomData/animation";
 import { translationData } from "../../data/translationData";
 import { getLanguage } from "../../functions/getLanguage";
+import { addRealEnter } from "../../functions/addEnter";
+import { TestDialog } from "../../UI/Modal/Special/TestDialog";
 
 function TrueFalseTest() {
    const { currentQuestion, generateNewQuestion } = useQuestionGenerator();
@@ -28,8 +28,18 @@ function TrueFalseTest() {
 
    function formQuestionTF(question = "", rightAnswer = 23) {
       let result = question.toLowerCase();
-      if (question.startsWith("Чому дорівнює ")) {
-         result = question.slice(14, question.length - 1).trim() + " дорівнює";
+      if (
+         question.startsWith(translationData[lang].generalTest.specialQuestion)
+      ) {
+         result =
+            question
+               .slice(
+                  translationData[lang].generalTest.specialQuestion.length,
+                  question.length - 1
+               )
+               .trim() +
+            " " +
+            translationData[lang].trueFalse.equal;
       }
       return `${translationData[lang].trueFalse.questionStart} ${result} ${rightAnswer} ?`;
    }
@@ -67,21 +77,15 @@ function TrueFalseTest() {
                   }
                />
             </div>
-            <Modal
+
+            <TestDialog
+               generateNewQuestion={generateNewQuestion}
+               openCloseModal={openCloseModal}
+               setScore={setScore}
+               score={score}
+               correctAnswer={currentQuestion.correctAnswer}
                isOpen={modalIsOpen}
-               closeModal={() => {
-                  generateNewQuestion();
-                  openCloseModal(false);
-                  setScore(0);
-               }}
-            >
-               <h1 className="question">
-                  Правильна відповідь {currentQuestion.correctAnswer}
-               </h1>
-               <p style={{ fontSize: "25px" }}>
-                  Ви відповіли вірно на {score} запитань!
-               </p>
-            </Modal>
+            />
          </m.div>
       </LazyMotion>
    );

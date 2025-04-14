@@ -7,9 +7,16 @@ import TrueFalseTest from "./screen/true-false/TrueFalseTest.jsx";
 import RealExercizes from "./screen/realExercizes/RealExercizes.jsx";
 import AboutPage from "./screen/about/About.jsx";
 import { AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
+import { getLanguage } from "./functions/getLanguage";
 
 function Router() {
    const location = useLocation();
+   useEffect(() => {
+      const lang = getLanguage();
+      document.documentElement.lang = lang;
+   }, []);
+
    return (
       <AnimatePresence mode="wait" initial={false}>
          <Routes location={location} key={location.pathname}>

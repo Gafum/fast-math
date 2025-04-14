@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import genereteQuestion from "../../custom-hooks/useQuestionGenerator";
 import Modal from "../../UI/Modal/Modal";
 import styles from "./WriteTest.module.css";
-import { addRealEnter } from "../basic-test/BasicTest";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { SimpleAnimation } from "../../assets/CustomData/animation";
 import { translationData } from "../../data/translationData";
 import { getLanguage } from "../../functions/getLanguage";
+import { addRealEnter } from "../../functions/addEnter";
+import { TestDialog } from "../../UI/Modal/Special/TestDialog";
 
 function WriteTest() {
    const [text, setText] = useState("");
@@ -67,22 +68,16 @@ function WriteTest() {
                </button>
             </div>
          </m.form>
-         <Modal
+
+         <TestDialog
+            setText={setText}
+            generateNewQuestion={generateNewQuestion}
+            openCloseModal={openCloseModal}
+            setScore={setScore}
+            score={score}
+            correctAnswer={currentQuestion.correctAnswer}
             isOpen={modalIsOpen}
-            closeModal={() => {
-               setText("");
-               generateNewQuestion();
-               openCloseModal(false);
-               setScore(0);
-            }}
-         >
-            <h1 className="question">
-               Правильна відповідь {currentQuestion.correctAnswer}
-            </h1>
-            <p style={{ fontSize: "25px" }}>
-               Ви відповіли вірно на {score} запитань!
-            </p>
-         </Modal>
+         />
       </LazyMotion>
    );
 }

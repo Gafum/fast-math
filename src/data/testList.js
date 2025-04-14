@@ -9,7 +9,10 @@ export const testList = [
       link: "https://youtu.be/s4qJ8ew6lio?si=vLCJLnd9V5ClGzou",
       createQuestions: () => {
          let a = Randomizer.randomInteger(1, 10);
-         return createOptions(`${a} * 9 =`, a * 9);
+         return createOptions({
+            question: `${a} * 9 =`,
+            correctAnswer: a * 9
+         });
       },
       realExercises: [
          {
@@ -38,7 +41,10 @@ export const testList = [
          let a = Randomizer.randomInteger(11, 19),
             b = Randomizer.randomInteger(11, 19);
 
-         return createOptions(`${a} * ${b} =`, a * b);
+         return createOptions({
+            question: `${a} * ${b} =`,
+            correctAnswer: a * b
+         });
       },
       realExercises: [
          {
@@ -71,7 +77,10 @@ export const testList = [
          let a = Randomizer.randomInteger(10, 99),
             b = Randomizer.randomInteger(10, 99);
 
-         return createOptions(`${a} * ${b} =`, a * b);
+         return createOptions({
+            question: `${a} * ${b} =`,
+            correctAnswer: a * b
+         });
       },
       realExercises: [
          {
@@ -104,7 +113,10 @@ export const testList = [
          let a = Randomizer.randomInteger(2, 9),
             b = Randomizer.randomInteger(2, 9);
 
-         return createOptions(`${a * b} / ${a} =`, b);
+         return createOptions({
+            question: `${a * b} / ${a} =`,
+            correctAnswer: b
+         });
       },
       realExercises: [
          {
@@ -136,7 +148,10 @@ export const testList = [
       createQuestions: () => {
          let a = Randomizer.randomInteger(2, 9);
 
-         return createOptions(`Квадрат числа ${a} =`, Math.pow(a, 2));
+         return createOptions({
+            question: `Квадрат числа ${a} =`,
+            correctAnswer: Math.pow(a, 2)
+         });
       },
       realExercises: [
          {
@@ -168,7 +183,10 @@ export const testList = [
       createQuestions: () => {
          let a = Randomizer.randomInteger(2, 9);
 
-         return createOptions(`Корінь квадратний від числа ${Math.pow(a, 2)} =`, a);
+         return createOptions({
+            question: `Корінь квадратний від числа ${Math.pow(a, 2)} =`,
+            correctAnswer: a
+         });
       },
       realExercises: [
          {
@@ -217,7 +235,10 @@ export const testList = [
             percent *= a;
             result *= a;
          }
-         return createOptions(`${percent}% від ${number} =`, result);
+         return createOptions({
+            question: `${percent}% від ${number} =`,
+            correctAnswer: result
+         });
       },
       realExercises: [
          {
@@ -250,7 +271,10 @@ export const testList = [
          let a = Randomizer.randomInteger(2, 5),
             b = Randomizer.randomInteger(1, 5);
 
-         return createOptions(`Логарифм ${Math.pow(a, b)} за основи ${a} =`, b, true);
+         return createOptions({
+            question: `Логарифм ${Math.pow(a, b)} за основи ${a} =`,
+            correctAnswer: b, isSimple: true
+         });
       },
       realExercises: [
          {
@@ -286,7 +310,11 @@ export const testList = [
          let equation = Randomizer.randomInteger(0, 1) ?
             `${a} * x = ${a * b}` :
             `${a * b} / x = ${a}`
-         return createOptions("Чому дорівнює x в рівнянні <br/>" + equation + " ?", b);
+         return createOptions({
+            question: "x в рівнянні <br/>" + equation,
+            correctAnswer: b,
+            addSpecialQuestion: true
+         });
       },
       realExercises: [
          {
@@ -338,7 +366,11 @@ export const testList = [
                   `${a} - ${b} + x = ${result}` :
                   `${a} + x - ${b} = ${result}`
          }
-         return createOptions("Чому дорівнює x в рівнянні <br/>" + equation + " ?", x);
+         return createOptions({
+            question: "x в рівнянні <br/>" + equation,
+            correctAnswer: x,
+            addSpecialQuestion: true
+         });
       },
       realExercises: [
          {
@@ -378,8 +410,12 @@ export const testList = [
          const sumOfRoots = root1 + root2;
          const productOfRoots = root1 * root2;
 
-         return createOptions(`Чому дорівнює сума коренів рівняння <br/>
-         x^2 ${(sumOfRoots > 0 ? "- " : "+ ") + Math.abs(sumOfRoots)}x ${(productOfRoots > 0 ? "+ " : "- ") + Math.abs(productOfRoots)} = 0 ?`, root1 + root2);
+         return createOptions({
+            question: "сума коренів рівняння <br/>" + `
+         x^2 ${(sumOfRoots > 0 ? "- " : "+ ") + Math.abs(sumOfRoots)}x ${(productOfRoots > 0 ? "+ " : "- ") + Math.abs(productOfRoots)} = 0`,
+            correctAnswer: root1 + root2,
+            addSpecialQuestion: true
+         });
       },
       realExercises: [
          {
@@ -426,14 +462,17 @@ export const testList = [
                }
             }
 
-            question = `Чому дорівнює середнє геометричне ${answer / divider} і ${answer * divider} ?`;
+            question = `середнє геометричне ${answer / divider} і ${answer * divider}`;
          } else {
             let application = Randomizer.randomInteger(1, 15);
-            question = `Чому дорівнює середнє арифметичне ${answer - application} і ${answer + application} ?`;
+            question = `середнє арифметичне ${answer - application} і ${answer + application}`;
          }
 
-
-         return createOptions(question, answer);
+         return createOptions({
+            question: question,
+            correctAnswer: answer,
+            addSpecialQuestion: true
+         });
       },
       realExercises: [
          {

@@ -6,6 +6,8 @@ import {
    AnimateList,
    ScreensAnimation,
 } from "../../assets/CustomData/animation";
+import { translationData } from "../../data/translationData";
+import { getLanguage } from "../../functions/getLanguage";
 
 function AboutPage() {
    function ReturnLink({ link, txt, index }) {
@@ -23,30 +25,19 @@ function AboutPage() {
       );
    }
 
+   const lang = getLanguage();
+
    return (
       <motion.div className={styles.aboutPage} {...ScreensAnimation}>
          <p>
-            Ласкаво просимо до <strong>Fast Math!</strong>
+            {translationData[lang].about.welcome + " "}
+            <strong>Fast Math!</strong>
          </p>
+         {translationData[lang].about.list.map((text) => {
+            return <p key={text}>{text}</p>;
+         })}
          <p>
-            Fast Math - це освітній веб-сайт, створений для покращення навичок
-            швидкого рахунку серед учнів, які здають освітні тести. Наша мета -
-            зробити навчання математики захоплюючим та ефективним.
-         </p>
-         <p>
-            На Fast Math ви знайдете різноманітні вправи, такі як "простий
-            тест", "вписати відповідь", "правда-хиба" та інші. Ми також надаємо
-            можливість перевірити свої знання за допомогою реальних завданнь з
-            ЗНО ( НМТ ) та ДПА.
-         </p>
-         <p>
-            Наша команда вірить у те, що математика може бути захопливою, і ми
-            робимо все можливе, щоб зробити ваш процес навчання цікавим та
-            корисним. Долучіться до нашої освітньої спільноти та розвивайте свої
-            математичні здібності разом із Fast Math!
-         </p>
-         <p>
-            <strong>Використані джерела:</strong>
+            <strong>{translationData[lang].about.usedLink}:</strong>
          </p>
          <ul className={styles.listOfLinks}>
             {testList.map(({ link, realLink, name }, index) => {

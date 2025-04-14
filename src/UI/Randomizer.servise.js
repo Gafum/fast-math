@@ -1,3 +1,6 @@
+import { translationData } from "../data/translationData";
+import { getLanguage } from "../functions/getLanguage";
+
 export default class Randomizer {
    static shuffleArray(array) {
       return array.sort(() => Math.random() - 0.5);
@@ -8,7 +11,7 @@ export default class Randomizer {
    }
 }
 
-export function createOptions(question, correctAnswer, isSimple = false) {
+export function createOptions({ question, correctAnswer, isSimple = false, addSpecialQuestion = false }) {
    let listOfAnswers = [correctAnswer];
 
    listOfAnswers[1] = String(
@@ -48,6 +51,10 @@ export function createOptions(question, correctAnswer, isSimple = false) {
             Randomizer.randomInteger(2, 5)
          ))
    }
+   let localQuestion = question
+   if (addSpecialQuestion) {
+      localQuestion = translationData[getLanguage()].generalTest.specialQuestion + " " + question + " ?"
+   }
 
-   return { question, correctAnswer, options: Randomizer.shuffleArray(listOfAnswers) };
+   return { question: localQuestion, correctAnswer, options: Randomizer.shuffleArray(listOfAnswers) };
 }

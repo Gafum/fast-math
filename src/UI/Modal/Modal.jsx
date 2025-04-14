@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Modal.module.css";
+import { translationData } from "../../data/translationData";
+import { getLanguage } from "../../functions/getLanguage";
 
 function Modal({ isOpen, closeModal, children }) {
    return (
@@ -14,13 +16,13 @@ function Modal({ isOpen, closeModal, children }) {
             {children}
             <div className={styles.modal__btns}>
                <Link className={styles.modal__btn} to="/">
-                  Закрити
+                  {translationData[getLanguage()].testDialog.btn.close}
                </Link>
                <button
                   className={`${styles.modal__btn} ${styles.modal__btn_blue}`}
                   onClick={closeModal}
                >
-                  Повторити
+                  {translationData[getLanguage()].testDialog.btn.repeat}
                </button>
             </div>
          </div>

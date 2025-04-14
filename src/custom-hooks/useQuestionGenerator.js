@@ -9,12 +9,12 @@ function useQuestionGenerator() {
       correctAnswer: "",
    });
 
-   useEffect(() => generateNewQuestion(), [])
+   useEffect(() => generateNewQuestion(), []);
 
    const { whatTopic } = useParams();
 
    const generateNewQuestion = () => {
-      let whatTest = testList.find(({ id }) => id === whatTopic)
+      let whatTest = testList.find(({ id }) => id === whatTopic);
       if (whatTest) {
          setCurrentQuestion(whatTest.createQuestions());
       } else {

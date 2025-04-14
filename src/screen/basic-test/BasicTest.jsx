@@ -2,28 +2,10 @@ import { useState } from "react";
 import AnswerBtn from "./answer-btn/AnswerBtn";
 import styles from "./../home/Home.module.css";
 import useQuestionGenerator from "../../custom-hooks/useQuestionGenerator";
-import Modal from "../../UI/Modal/Modal";
 import { SimpleAnimation } from "../../assets/CustomData/animation";
 import { LazyMotion, domAnimation, m } from "framer-motion";
-
-export function addRealEnter(question = "") {
-   if (!question.includes("<br/>")) {
-      return question;
-   }
-
-   return (
-      <>
-         {question.split("<br/>").map((text) => {
-            return (
-               <>
-                  {text}
-                  <br />
-               </>
-            );
-         })}
-      </>
-   );
-}
+import { addRealEnter } from "../../functions/addEnter";
+import { TestDialog } from "../../UI/Modal/Special/TestDialog";
 
 function BacisTest() {
    const { currentQuestion, generateNewQuestion } = useQuestionGenerator();
@@ -60,21 +42,14 @@ function BacisTest() {
             </ul>
          </m.div>
 
-         <Modal
+         <TestDialog
+            generateNewQuestion={generateNewQuestion}
+            openCloseModal={openCloseModal}
+            setScore={setScore}
+            score={score}
+            correctAnswer={currentQuestion.correctAnswer}
             isOpen={modalIsOpen}
-            closeModal={() => {
-               generateNewQuestion();
-               openCloseModal(false);
-               setScore(0);
-            }}
-         >
-            <h1 className="question">
-               Правильна відповідь {currentQuestion.correctAnswer}
-            </h1>
-            <p style={{ fontSize: "25px" }}>
-               Ви відповіли вірно на {score} запитань!
-            </p>
-         </Modal>
+         />
       </LazyMotion>
    );
 }
