@@ -1,4 +1,3 @@
-import { translationData } from "../../../data/translationData";
 import { getLanguage } from "../../../functions/getLanguage";
 import Modal from "../Modal";
 
@@ -24,16 +23,13 @@ export const TestDialog = ({
          }}
       >
          <h1 className="question">
-            {translationData[getLanguage()].testDialog.rightAnswer.replace(
+            {getLanguage().testDialog.rightAnswer.replace(
                "!!NUMBER!!",
                correctAnswer
             )}
          </h1>
          <p style={{ fontSize: "25px" }}>
-            {translationData[getLanguage()].testDialog.score.replace(
-               "!!NUMBER!!",
-               score
-            )}
+            {getLanguage().testDialog.score.replace("!!NUMBER!!", score)}
          </p>
       </Modal>
    );

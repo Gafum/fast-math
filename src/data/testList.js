@@ -1,10 +1,9 @@
 import { getLanguage } from "../functions/getLanguage";
 import Randomizer, { createOptions } from "../UI/Randomizer.servise";
-import { translationData } from "./translationData";
 
 export const testList = [
    {
-      name: translationData[getLanguage()].testList[0].name ?? translationData.en.testList[0].name,
+      name: getLanguage().testList[0].name,
       id: "multiply-by-9",
       link: "https://youtu.be/s4qJ8ew6lio?si=vLCJLnd9V5ClGzou",
       createQuestions: () => {
@@ -34,7 +33,7 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[1].name ?? translationData.en.testList[1].name,
+      name: getLanguage().testList[1].name,
       id: "digit-numbers",
       link: "https://sites.google.com/roli.ho.ua/easy-math-digit-numbers?usp=sharing",
       createQuestions: () => {
@@ -69,7 +68,7 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[2].name ?? translationData.en.testList[2].name,
+      name: getLanguage().testList[2].name,
       id: "two-digit",
       realLink: "https://www.youtube.com/watch?v=CtmRBlZ009w",
       link: "https://drive.google.com/file/d/1XV_9x-QagDWdIcUFNz12czK7OmUsik5I/view",
@@ -106,7 +105,7 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[3].name ?? translationData.en.testList[3].name,
+      name: getLanguage().testList[3].name,
       id: "division",
       link: "https://youtu.be/k5gMbFmZAG8?si=AYmyb0fAfZsk1Bva",
       createQuestions: () => {
@@ -142,14 +141,14 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[4].name ?? translationData.en.testList[4].name,
+      name: getLanguage().testList[4].name,
       id: "square",
       link: "https://youtu.be/kBDGBD6GIKI?si=uQTgDZApwfOdOEqt",
       createQuestions: () => {
          let a = Randomizer.randomInteger(2, 9);
-
+         let localQuestion = getLanguage().testList[4].question.replace("!!NUMBER!!", a)
          return createOptions({
-            question: `Квадрат числа ${a} =`,
+            question: localQuestion,
             correctAnswer: Math.pow(a, 2)
          });
       },
@@ -177,14 +176,14 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[5].name ?? translationData.en.testList[5].name,
+      name: getLanguage().testList[5].name,
       id: "square-root",
       link: "https://narodna-osvita.com.ua/511-kvadratn-koren-dysn-chisla.html",
       createQuestions: () => {
          let a = Randomizer.randomInteger(2, 9);
-
+         let localQuestion = getLanguage().testList[5].question.replace("!!NUMBER!!", Math.pow(a, 2))
          return createOptions({
-            question: `Корінь квадратний від числа ${Math.pow(a, 2)} =`,
+            question: localQuestion,
             correctAnswer: a
          });
       },
@@ -212,7 +211,7 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[6].name ?? translationData.en.testList[6].name,
+      name: getLanguage().testList[6].name,
       id: "percent",
       link: "https://youtu.be/XEPb9OxdudY?si=Vo3eycyGzZk3y-_5",
       createQuestions: () => {
@@ -235,8 +234,9 @@ export const testList = [
             percent *= a;
             result *= a;
          }
+         let localQuestion = getLanguage().testList[6].question.replace("!!NUMBER!!", number).replace("!!PERCENT!!", percent)
          return createOptions({
-            question: `${percent}% від ${number} =`,
+            question: localQuestion,
             correctAnswer: result
          });
       },
@@ -264,15 +264,15 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[7].name ?? translationData.en.testList[7].name,
+      name: getLanguage().testList[7].name,
       id: "log",
       link: "https://youtu.be/Vqe7X4VIX1c?si=FnaQFyIc074-dEyQ",
       createQuestions: () => {
          let a = Randomizer.randomInteger(2, 5),
             b = Randomizer.randomInteger(1, 5);
-
+         let localQuestion = getLanguage().testList[7].question.replace("!!NUMBER!!", a).replace("!!POWNUMBER!!", Math.pow(a, b))
          return createOptions({
-            question: `Логарифм ${Math.pow(a, b)} за основи ${a} =`,
+            question: localQuestion,
             correctAnswer: b, isSimple: true
          });
       },
@@ -300,7 +300,7 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[8].name ?? translationData.en.testList[8].name,
+      name: getLanguage().testList[8].name,
       id: "easy-equation",
       link: "https://youtu.be/hoM0AHKTc7k?si=jVqya9SVDJ8Va0S2",
       createQuestions: () => {
@@ -310,8 +310,11 @@ export const testList = [
          let equation = Randomizer.randomInteger(0, 1) ?
             `${a} * x = ${a * b}` :
             `${a * b} / x = ${a}`
+
+
+         let localQuestion = getLanguage().testList[8].question + equation
          return createOptions({
-            question: "x в рівнянні <br/>" + equation,
+            question: localQuestion,
             correctAnswer: b,
             addSpecialQuestion: true
          });
@@ -340,7 +343,7 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[9].name ?? translationData.en.testList[9].name,
+      name: getLanguage().testList[9].name,
       id: "equation",
       link: "https://youtu.be/6dihno5V-5Y?si=WomknX_WyCkEGmFc",
       createQuestions: () => {
@@ -366,8 +369,10 @@ export const testList = [
                   `${a} - ${b} + x = ${result}` :
                   `${a} + x - ${b} = ${result}`
          }
+
+         let localQuestion = getLanguage().testList[9].question + equation
          return createOptions({
-            question: "x в рівнянні <br/>" + equation,
+            question: localQuestion,
             correctAnswer: x,
             addSpecialQuestion: true
          });
@@ -395,7 +400,7 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[10].name ?? translationData.en.testList[10].name,
+      name: getLanguage().testList[10].name,
       id: "quadratic-equation",
       link: "https://www.youtube.com/watch?v=XlRO2uduCKc",
       createQuestions: () => {
@@ -410,9 +415,9 @@ export const testList = [
          const sumOfRoots = root1 + root2;
          const productOfRoots = root1 * root2;
 
+         let localQuestion = getLanguage().testList[10].question + `x^2 ${(sumOfRoots > 0 ? "- " : "+ ") + Math.abs(sumOfRoots)}x ${(productOfRoots > 0 ? "+ " : "- ") + Math.abs(productOfRoots)} = 0`
          return createOptions({
-            question: "сума коренів рівняння <br/>" + `
-         x^2 ${(sumOfRoots > 0 ? "- " : "+ ") + Math.abs(sumOfRoots)}x ${(productOfRoots > 0 ? "+ " : "- ") + Math.abs(productOfRoots)} = 0`,
+            question: localQuestion,
             correctAnswer: root1 + root2,
             addSpecialQuestion: true
          });
@@ -441,7 +446,7 @@ export const testList = [
       ]
    },
    {
-      name: translationData[getLanguage()].testList[11].name ?? translationData.en.testList[11].name,
+      name: getLanguage().testList[11].name,
       id: "average-mean",
       link: "https://formula.co.ua/uk/content/mean.html",
       createQuestions: () => {
@@ -462,10 +467,13 @@ export const testList = [
                }
             }
 
-            question = `середнє геометричне ${answer / divider} і ${answer * divider}`;
+            question =
+               getLanguage().testList[11].question[0].replace("!!FIRST!!", answer / divider).replace("!!SECOND!!", answer * divider)
          } else {
             let application = Randomizer.randomInteger(1, 15);
-            question = `середнє арифметичне ${answer - application} і ${answer + application}`;
+            question =
+               getLanguage().testList[11].question[1]
+                  .replace("!!FIRST!!", answer - application).replace("!!SECOND!!", answer + application);
          }
 
          return createOptions({
@@ -493,5 +501,4 @@ export const testList = [
          }
       ]
    }
-
 ];

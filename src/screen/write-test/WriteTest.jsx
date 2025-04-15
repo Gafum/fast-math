@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import genereteQuestion from "../../custom-hooks/useQuestionGenerator";
-import Modal from "../../UI/Modal/Modal";
 import styles from "./WriteTest.module.css";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { SimpleAnimation } from "../../assets/CustomData/animation";
-import { translationData } from "../../data/translationData";
 import { getLanguage } from "../../functions/getLanguage";
 import { addRealEnter } from "../../functions/addEnter";
 import { TestDialog } from "../../UI/Modal/Special/TestDialog";
@@ -55,7 +53,7 @@ function WriteTest() {
                   type="text"
                   inputMode="numeric"
                   placeholder={
-                     translationData[getLanguage()].writeTest.placeholder +
+                     getLanguage().writeTest.placeholder +
                      "..."
                   }
                   value={text.replace(/[^0-9-]+/g, "")}

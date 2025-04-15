@@ -13,8 +13,12 @@ import { getLanguage } from "./functions/getLanguage";
 function Router() {
    const location = useLocation();
    useEffect(() => {
-      const lang = getLanguage();
-      document.documentElement.lang = lang;
+      try {
+         const lang = getLanguage();
+         document.documentElement.lang = lang;
+      } catch (error) {
+         console.log(error);
+      }
    }, []);
 
    return (

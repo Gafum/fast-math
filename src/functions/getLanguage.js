@@ -1,4 +1,10 @@
+import { translationData } from "../data/translationData";
+
 export function getLanguage() {
    var [lang] = ((navigator.languages ? navigator.languages[0] : navigator.language || navigator.userLanguage) || "en").split("-");
-   return lang
+
+   if (translationData[lang]) {
+      return translationData[lang]
+   }
+   return translationData.en
 }

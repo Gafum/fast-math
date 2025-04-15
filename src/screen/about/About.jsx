@@ -6,7 +6,6 @@ import {
    AnimateList,
    ScreensAnimation,
 } from "../../assets/CustomData/animation";
-import { translationData } from "../../data/translationData";
 import { getLanguage } from "../../functions/getLanguage";
 
 function AboutPage() {
@@ -30,14 +29,14 @@ function AboutPage() {
    return (
       <motion.div className={styles.aboutPage} {...ScreensAnimation}>
          <p>
-            {translationData[lang].about.welcome + " "}
+            {lang.about.welcome + " "}
             <strong>Fast Math!</strong>
          </p>
-         {translationData[lang].about.list.map((text) => {
+         {lang.about.list.map((text) => {
             return <p key={text}>{text}</p>;
          })}
          <p>
-            <strong>{translationData[lang].about.usedLink}:</strong>
+            <strong>{lang.about.usedLink}:</strong>
          </p>
          <ul className={styles.listOfLinks}>
             {testList.map(({ link, realLink, name }, index) => {
