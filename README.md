@@ -1,10 +1,16 @@
 # Fast Math Website
 
-Fast Math is a web application designed to help users improve their math skills through various interactive exercises and practice tasks. The website provides a user-friendly interface and a wide range of features to enhance learning and understanding of mathematical concepts.
+Fast Math is a web application designed to help users improve their math skills through various interactive exercises and practice tasks. The website provides a user-friendly interface and a wide range of features to enhance learning and understanding of mathematical concepts. This site was developed for a science project at school in Ukrainian by an 11th grade student to prepare for final exams. Now the site supports three languages: English, German, and Ukrainian.
 
 ## Getting Started
 
-To run the project locally, simply clone this repository and navigate to the project directory. Download all packages with `yarn install`. Then, run the command `yarn dev` to start the development server. Make any changes as necessary, and use `git push` to deploy the changes to your repository.
+To run this project locally, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies using `yarn install`.
+4. Start the development server using `yarn dev`.
+
 
 ## Features
 

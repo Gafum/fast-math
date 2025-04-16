@@ -124,7 +124,7 @@ body {
 }
 
 .main-background {
-   --window-height: 120vmax;
+   --window-height: max(120vmax, 120lvh);
    background-color: #111;
    background-image: url("/wordcloud.svg");
    position: fixed;

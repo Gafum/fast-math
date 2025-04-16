@@ -38,14 +38,11 @@
 }
 
 .titleContainer > button {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   align-content: center;
    background-color: black;
    border-radius: 3px;
    padding: 4px 8px;
+   word-break: keep-all;
+   white-space: nowrap;
 }
 
 .titleContainer > button > span {
@@ -58,8 +55,7 @@
    }
 
    .titleContainer > button {
-      flex-direction: row;
-      gap: 5px;
+      white-space: wrap;
    }
 
    .question {

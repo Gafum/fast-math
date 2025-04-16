@@ -14,7 +14,7 @@ function Router() {
    const location = useLocation();
    useEffect(() => {
       try {
-         const lang = getLanguage();
+         const lang = getLanguage({ getName: true });
          document.documentElement.lang = lang;
       } catch (error) {
          console.log(error);

@@ -23,13 +23,8 @@ export const testList = [
          }, {
             question: "5 * 9 - 27 / 3 = x",
             answer: "x = 36"
-         }, {
-            question: "Марія має 7 коробок з іграшками. У кожній коробці 9 іграшок. Скільки іграшок усього у Марії?",
-            answer: "7 коробок * 9 іграшок/коробка = 63 іграшки"
-         }, {
-            question: "На складі є 54 кілограми яблук. Їх потрібно розкласти у ящики так, щоб в кожному ящику було рівно по 9 кілограмів яблук. Скільки ящиків потрібно?",
-            answer: "54 кілограми / 9 кілограмів/ящик = 6 ящиків"
-         }
+         },
+         ...getLanguage().testList[0].realExercises,
       ]
    },
    {
@@ -45,27 +40,7 @@ export const testList = [
             correctAnswer: a * b
          });
       },
-      realExercises: [
-         {
-            question: "Знайдіть добуток чисел 14 і 18.",
-            answer: "Добуток = 252"
-         },
-         {
-            question: "Обчисліть 15 помножити на 12.",
-            answer: "Результат = 180"
-         },
-         {
-            question: "Який результат множення 19 на 12?",
-            answer: "Відповідь: 228"
-         }, {
-            question: "У магазині було 15 коробок з конфетами, в кожній коробці було по 14 конфет. Скільки конфет було всього?",
-            answer: "Відповідь: 210 конфет"
-         },
-         {
-            question: "У саду росло 13 яблунь, і в кожному дереві було по 19 яблук. Скільки яблук було всього?",
-            answer: "Відповідь: 247 яблук"
-         }
-      ]
+      realExercises: getLanguage().testList[1].realExercises
    },
    {
       name: getLanguage().testList[2].name,
@@ -81,28 +56,7 @@ export const testList = [
             correctAnswer: a * b
          });
       },
-      realExercises: [
-         {
-            question: "Обчисліть 23 * 15",
-            answer: "Відповідь: 345"
-         },
-         {
-            question: "Добуток 47 і 12",
-            answer: "Відповідь: 564"
-         },
-         {
-            question: "x / 56 = 33",
-            answer: "x = 1848"
-         },
-         {
-            question: "У магазині було 25 ящиків і в кожному ящику було по 78 яблук. Скільки яблук було всього?",
-            answer: "Відповідь: 1950 яблук"
-         },
-         {
-            question: "У книжковому магазині було 30 книг, а в кожній книзі було по 52 сторінки. Скільки сторінок було всього?",
-            answer: "Відповідь: 1560 сторінок"
-         }
-      ]
+      realExercises: getLanguage().testList[2].realExercises
    },
    {
       name: getLanguage().testList[3].name,
@@ -117,28 +71,7 @@ export const testList = [
             correctAnswer: b
          });
       },
-      realExercises: [
-         {
-            question: "Обчисліть 42 / 7",
-            answer: "Відповідь: 6"
-         },
-         {
-            question: "18 / x = 3",
-            answer: "Відповідь: 6"
-         },
-         {
-            question: "(20+4*2)/4 = ",
-            answer: "Відповідь: 7"
-         },
-         {
-            question: "У магазині було 35 яблук, і їх рівномірно розділили між 5 дітьми. Скільки яблук отримав кожен?",
-            answer: "7 яблук на кожного"
-         },
-         {
-            question: "Якщо у вас є 48 цукерок, і ви хочете поділити їх між 4 друзями рівномірно, скільки цукерок отримає кожен?",
-            answer: "12 цукерок на кожного"
-         }
-      ]
+      realExercises: getLanguage().testList[3].realExercises
    },
    {
       name: getLanguage().testList[4].name,
@@ -152,28 +85,7 @@ export const testList = [
             correctAnswer: Math.pow(a, 2)
          });
       },
-      realExercises: [
-         {
-            question: "Обчисліть квадрат числа 3",
-            answer: "Відповідь: 9"
-         },
-         {
-            question: "(3+2)^2",
-            answer: "Відповідь: 25"
-         },
-         {
-            question: "(25/5*3-7)^2",
-            answer: "Відповідь: 64"
-         },
-         {
-            question: "Площа квадратного поля становить 64 квадратних метри. Яка довжина одного його боку?",
-            answer: "Відповідь: 8 метрів"
-         },
-         {
-            question: "У ванні є 4 квадратні плитки, кожна ребро якої має довжину 2 метри. Яка загальна площа плиток?",
-            answer: "Відповідь: 16 квадратних метрів"
-         },
-      ]
+      realExercises: getLanguage().testList[4].realExercises
    },
    {
       name: getLanguage().testList[5].name,
@@ -188,10 +100,7 @@ export const testList = [
          });
       },
       realExercises: [
-         {
-            question: "Знайдіть корінь квадратний від числа 49",
-            answer: "7"
-         },
+         ...getLanguage().testList[5].realExercises,
          {
             question: "√(64) * √(4)",
             answer: "8 * 2 = 16"
@@ -199,13 +108,8 @@ export const testList = [
          {
             question: "√(x + 3) = 5",
             answer: "√(x + 3) = 5 => x + 3 = 25 => x = 22"
-         },
-         {
-            question: "Площа квадрата дорівнює 484 см2. Знайди сторону квадрата.",
-            answer: "22 см"
-         },
-         {
-            question: "√(x-2)=11",
+         }, {
+            question: "√(x-2) = 11",
             answer: "x - 2 = 121 => x = 123"
          }
       ]
@@ -240,28 +144,7 @@ export const testList = [
             correctAnswer: result
          });
       },
-      realExercises: [
-         {
-            question: "Знайди 120% від числа 45",
-            answer: "54"
-         },
-         {
-            question: "Знайти 12% від числа 450",
-            answer: "54"
-         },
-         {
-            question: "Бригада за планом пивинна була засіяти 980 га пшеницею. План вона виконала на 115%. Скільки гектарів засієно пшеницею?",
-            answer: "1127 га"
-         },
-         {
-            question: "Площа поля становить 420 га. Житом засіяли 15 % поля. Скільки гектарів поля залишилось незасіяним?",
-            answer: "357 га"
-         },
-         {
-            question: "За квиток у кінотеатр заплатили 64 грн. Яка вартість квитка без знижки, якщо знижку зробили в 20%?",
-            answer: "80 грн"
-         },
-      ]
+      realExercises: getLanguage().testList[6].realExercises
    },
    {
       name: getLanguage().testList[7].name,
@@ -276,28 +159,7 @@ export const testList = [
             correctAnswer: b, isSimple: true
          });
       },
-      realExercises: [
-         {
-            question: "Знайдіть логарифм 9 за основи 9",
-            answer: "1"
-         },
-         {
-            question: "Знайдіть логарифм 125 за основи 5",
-            answer: "3"
-         },
-         {
-            question: "Знайдіть логарифм 9 за основи √3",
-            answer: "4"
-         },
-         {
-            question: "Скільки разів треба помножити число 2 саме на себе, щоб вийшло 32?",
-            answer: "5"
-         },
-         {
-            question: "Скільки разів треба помножити число 3 саме на себе, щоб вийшло 243?",
-            answer: "5"
-         },
-      ]
+      realExercises: getLanguage().testList[7].realExercises
    },
    {
       name: getLanguage().testList[8].name,
@@ -337,9 +199,10 @@ export const testList = [
             answer: "x = 2"
          },
          {
-            question: "0,5(x-4)=1,5",
+            question: "0,5(x - 4) = 1,5",
             answer: "x = 7"
-         }
+         },
+         ...getLanguage().testList[8].realExercises
       ]
    },
    {
@@ -396,7 +259,8 @@ export const testList = [
          {
             question: "2(5x + 6) = 20",
             answer: "x = 0,8"
-         }
+         },
+         ...getLanguage().testList[9].realExercises
       ]
    },
    {
@@ -435,14 +299,7 @@ export const testList = [
             question: "x^2 - 4x + 3 = 0",
             answer: "x1 = 1; x2 = 3"
          },
-         {
-            question: "x^2 + 3x -4 = 0 Обчисліть суму коренів рівняння ",
-            answer: "Відповідь: -3"
-         },
-         {
-            question: "x^2 + 6x -55 = 0 Обчисліть добуток коренів рівняння ",
-            answer: "Відповідь: -55"
-         },
+         ...getLanguage().testList[10].realExercises
       ]
    },
    {
@@ -482,23 +339,6 @@ export const testList = [
             addSpecialQuestion: true
          });
       },
-      realExercises: [
-         {
-            question: "Знайдіть середнє геометричне чисел 4 і 36.",
-            answer: "Середнє геометричне = 12"
-         }, {
-            question: "Знайдіть середнє арифметичне чисел 8 і 12.",
-            answer: "Середнє арифметичне = 10"
-         }, {
-            question: "Знайдіть середнє геометричне між числами 9 та 36.",
-            answer: "Середнє геометричне = 18"
-         }, {
-            question: "Задано числа: 12, 15, 18, та x. Якщо середнє арифметичне цих чисел дорівнює 16, то знайдіть значення x.",
-            answer: "x = 21"
-         }, {
-            question: "Якщо середній бал трьох учасників турніру дорівнює 8 балів, і перший учасник отримав 10 балів, а другий - 8 балів, то який бал отримав третій учасник?",
-            answer: "Третій учасник отримав 6 балів"
-         }
-      ]
+      realExercises: getLanguage().testList[11].realExercises
    }
 ];

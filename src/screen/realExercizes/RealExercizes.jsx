@@ -7,6 +7,7 @@ import {
    SimpleAnimation,
 } from "../../assets/CustomData/animation";
 import { m, LazyMotion, domAnimation } from "framer-motion";
+import { getLanguage } from "../../functions/getLanguage";
 
 function RealExercizes() {
    const [showAnswers, setShowAnswers] = useState([]);
@@ -58,9 +59,10 @@ function RealExercizes() {
                         </h3>
                         <button onClick={() => toggleAnswer(index)}>
                            <span>
-                              {showAnswers[index] ? "Сховати" : "Показати"}
+                              {showAnswers[index]
+                                 ? getLanguage().realExercises.show
+                                 : getLanguage().realExercises.hide}
                            </span>
-                           <span>відповідь</span>
                         </button>
                      </div>
                      <p

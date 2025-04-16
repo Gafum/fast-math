@@ -35,6 +35,24 @@ function AboutPage() {
          {lang.about.list.map((text) => {
             return <p key={text}>{text}</p>;
          })}
+
+         <p>
+            <strong>{lang.about.developerData}:</strong>
+         </p>
+         <ul className={styles.developerLinks}>
+            <li>
+               <a href="https://github.com/Gafum">GitHub</a>
+            </li>
+            <li>
+               <a href="https://www.youtube.com/@gafum">YouTube</a>
+            </li>
+            <li>
+               <a href="https://play.google.com/store/apps/dev?id=5298640550031789087&gl=DE">
+                  Google Play
+               </a>
+            </li>
+         </ul>
+
          <p>
             <strong>{lang.about.usedLink}:</strong>
          </p>
@@ -55,6 +73,7 @@ function AboutPage() {
                );
             })}
          </ul>
+
          <Link to="/">
             <img
                src="/fast-math/favicon.svg"
