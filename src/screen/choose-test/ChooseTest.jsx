@@ -5,21 +5,14 @@ import { testList } from "../../data/testList";
 import { motion } from "framer-motion";
 import { ScreensAnimation } from "../../assets/CustomData/animation";
 import { getLanguage } from "../../functions/getLanguage";
+import { Error } from "../../UI/Error/Error";
 
 function ChooseTest() {
    const { whatTopic } = useParams();
-   const navigate = useNavigate();
+
 
    if (!testList.find(({ id }) => id === whatTopic)) {
-      return (
-         <h1
-            className={styles.card}
-            style={{ backgroundColor: "#912C2C" }}
-            onClick={() => navigate("/")}
-         >
-            Тема не знайдена! Перевірте чи правильно введене посилання!
-         </h1>
-      );
+      return <Error />;
    }
 
    const lang = getLanguage();

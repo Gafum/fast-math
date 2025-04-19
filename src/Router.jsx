@@ -9,6 +9,7 @@ import AboutPage from "./screen/about/About.jsx";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import { getLanguage } from "./functions/getLanguage";
+import { Error } from "./UI/Error/Error.jsx";
 
 function Router() {
    const location = useLocation();
@@ -32,7 +33,7 @@ function Router() {
             <Route path="/true-false/:whatTopic" element={<TrueFalseTest />} />
             <Route path="/exercizes/:whatTopic" element={<RealExercizes />} />
 
-            <Route path="*" element={<h1>Not Found</h1>}></Route>
+            <Route path="*" element={<Error />}></Route>
          </Routes>
       </AnimatePresence>
    );

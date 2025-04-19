@@ -1,4 +1,5 @@
 export const GermanTranslation = {
+  translationName: "Deutsch",
   testList: [
     {
       name: "Multiplikation mit 9",
@@ -293,4 +294,8 @@ export const GermanTranslation = {
     show: "Antwort anzeigen",
     hide: "Antwort ausblenden",
   },
+  error: {
+    themaIsNotFound: "Thema wurde nicht gefunden! Überprüfen Sie, ob der Link korrekt eingegeben wurde!",
+    btnText: "Startseite"
+  }
 };

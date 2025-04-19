@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { testList } from "../../data/testList";
 import styles from "./RealExercizes.module.css";
 import {
@@ -8,19 +8,16 @@ import {
 } from "../../assets/CustomData/animation";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import { getLanguage } from "../../functions/getLanguage";
+import { Error } from "../../UI/Error/Error";
 
 function RealExercizes() {
    const [showAnswers, setShowAnswers] = useState([]);
 
    const { whatTopic } = useParams();
-   const navigate = useNavigate();
+
 
    if (!testList.find(({ id }) => id === whatTopic)) {
-      return (
-         <h1 className={styles.question} onClick={() => navigate("/")}>
-            Тема не знайдена! Перевірте чи правильно введене посилання!
-         </h1>
-      );
+      return <Error />;
    }
 
    const toggleAnswer = (index) => {
@@ -30,6 +27,8 @@ function RealExercizes() {
          return updatedShowAnswers;
       });
    };
+
+   const lang = getLanguage();
 
    return (
       <LazyMotion features={domAnimation}>
@@ -60,8 +59,8 @@ function RealExercizes() {
                         <button onClick={() => toggleAnswer(index)}>
                            <span>
                               {showAnswers[index]
-                                 ? getLanguage().realExercises.show
-                                 : getLanguage().realExercises.hide}
+                                 ? lang.realExercises.show
+                                 : lang.realExercises.hide}
                            </span>
                         </button>
                      </div>

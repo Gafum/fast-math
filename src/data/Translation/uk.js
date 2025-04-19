@@ -1,4 +1,5 @@
 export const UkrainianTranslation = {
+   translationName: "Українська",
    testList: [
       {
          name: "Множення на 9",
@@ -268,5 +269,9 @@ export const UkrainianTranslation = {
    realExercises: {
       show: "Показати відповідь",
       hide: "Сховати відповідь"
+   },
+   error: {
+      themaIsNotFound: "Тема не знайдена! Перевірте чи правильно введене посилання!",
+      btnText: "Початкова сторінка"
    }
 };

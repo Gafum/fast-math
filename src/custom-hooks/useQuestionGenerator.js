@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { testList } from "../data/testList";
+import { getLanguage } from "../functions/getLanguage";
 
 function useQuestionGenerator() {
    const [currentQuestion, setCurrentQuestion] = useState({
@@ -19,7 +20,7 @@ function useQuestionGenerator() {
          setCurrentQuestion(whatTest.createQuestions());
       } else {
          setCurrentQuestion({
-            question: "Тема не знайдена!!!",
+            question: getLanguage().error.themaIsNotFound,
             options: ["1", "2", "3", ":("],
             correctAnswer: "",
          });

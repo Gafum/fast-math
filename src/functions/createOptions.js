@@ -1,14 +1,5 @@
-import { getLanguage } from "../functions/getLanguage";
-
-export default class Randomizer {
-   static shuffleArray(array) {
-      return array.sort(() => Math.random() - 0.5);
-   }
-   static randomInteger(min, max) {
-      let rand = min + Math.random() * (max + 1 - min);
-      return Math.floor(rand);
-   }
-}
+import Randomizer from "../Servises/Randomizer.servise";
+import { getLanguage } from "./getLanguage";
 
 export function createOptions({ question, correctAnswer, isSimple = false, addSpecialQuestion = false }) {
    let listOfAnswers = [correctAnswer];

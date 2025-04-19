@@ -1,4 +1,5 @@
 export const EnglishTranslation = {
+   translationName: "English",
    testList: [
       {
          name: "Multiplication by 9",
@@ -275,5 +276,9 @@ export const EnglishTranslation = {
    realExercises: {
       show: "Show answer",
       hide: "Hide answer"
+   },
+   error: {
+      themaIsNotFound: "Topic not found! Please check if the link is entered correctly!",
+      btnText: "Home Page"
    }
 }

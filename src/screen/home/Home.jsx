@@ -3,6 +3,7 @@ import styles from "./Home.module.css";
 import { testList } from "../../data/testList";
 import { ScreensAnimation } from "../../assets/CustomData/animation";
 import { motion } from "framer-motion";
+import { getLanguage } from "../../functions/getLanguage";
 
 const colorList = [
    "#493066",
@@ -28,7 +29,7 @@ function Home() {
          {testList.map((element, index) => (
             <TopicBtn
                key={element.id}
-               name={element.name}
+               name={getLanguage().testList[index].name}
                id={element.id}
                color={colorList[index]}
             />
