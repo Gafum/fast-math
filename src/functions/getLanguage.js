@@ -2,18 +2,19 @@ import { storedLanguage } from "../assets/CustomData/Constants";
 import { translationData } from "../data/translationData";
 
 export function getLanguage({ getName = false } = {}) {
-   let lang = localStorage.getItem(storedLanguage);
+   let lang;
 
-   if (!lang || lang.length == 0) {
-      lang = ((navigator.languages ? navigator.languages[0] : navigator.language || navigator.userLanguage) || "en").toLocaleLowerCase().split("-")[0];
+   try {
+      lang = localStorage.getItem(storedLanguage) || "";
+      if (!lang || lang.length == 0) {
+         lang = ((navigator.languages ? navigator.languages[0] : navigator.language || navigator.userLanguage) || "en").toLowerCase().split("-")[0];
+      }
+   } catch (error) {
+      console.warn("Error getting language:", error);
+      lang = "en";
    }
 
-   if (getName) {
-      return lang;
-   }
+   const validLang = translationData[lang] ? lang : "en";
 
-   if (translationData[lang]) {
-      return translationData[lang]
-   }
-   return translationData.en
+   return getName ? validLang : translationData[validLang];
 }
